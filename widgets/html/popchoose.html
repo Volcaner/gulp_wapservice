@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>pop choose </title>
+	<style type="text/css" media="screen">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="./../css/popchoose.debug.css">
+</head>
+<body>
+	<div id="parentId" class="parentId">
+		<input type="button" name="" value="click" onclick="click2ShowPop()">
+	</div>
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/popchoose.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	function click2ShowPop() {
+        var popChooseObj = new PopChoose();
+        var items = [
+        	"我是一头猪",
+        	"我来自青青草原",
+        	"你见到比克大魔王了吗？",
+        	"龟仙人老爷爷好色，和自来也一样！龟仙人老爷爷好色，和自来也一样！",
+        	"我是一头猪",
+        	"我来自青青草原",
+        	"你见到比克大魔王了吗？",
+        	"龟仙人老爷爷好色，和自来也一样！龟仙人老爷爷好色，和自来也一样！",        	
+        	"我是一头猪",
+        	"我来自青青草原",
+        	"你见到比克大魔王了吗？",
+        	"龟仙人老爷爷好色，和自来也一样！龟仙人老爷爷好色，和自来也一样！",
+        ];
+        popChooseObj.init(items, function(item) {
+        	console.log(item);
+        });
+	};
+</script>

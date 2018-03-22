@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>update header(更新头像)</title>
+	<style type="text/css" media="screen">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="./../css/updateheader.debug.css">
+</head>
+<body>
+	<input class="click" type="button" name="btn" value="click" onclick="showUpdateHeader()">
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/updateheader.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	function showUpdateHeader() {
+		var updateHeaderObj = new UpdateHeader();
+		updateHeaderObj.init(function(imageData) {
+			console.log(imageData);
+			updateHeaderObj.cancel();
+		});
+	};
+</script>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>发布商品</title>
+	<link rel="stylesheet" type="text/css" href="../css/publishPage.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+    <script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div class="yingying"></div>
+<div class="tips">
+  <p>请填写必填项</p>
+  <ul>
+    <li>1.商品标题</li>
+    <li>2.一件代发价和批发价至少设置一项</li>
+    <li>3.库存</li>
+    <li>4.运费</li>
+    <li>5.图片</li>
+  </ul>
+  <span class="tipclose">知道了</span>
+</div>
+	<div class="warcard one">
+	<div class="card_main">
+		<div class="sptitle">
+				<textarea placeholder="商品标题" class="shangpname"></textarea>
+				<span>0/30</span>
+		</div>
+		<div class="spms">
+				<textarea placeholder="商品描述(选填):此描述将在“微信订阅号”首页商品分享时呈现于分享海报,请谨慎填写！" class="shangpmians"></textarea>
+				<span>0/200</span>
+		</div>
+		<div class="zp">
+			<ul class="ullist_img">
+				<li class="divfile">
+					<div>
+							<i class="icon iconfont">&#xe6d9;</i>
+							<p>最多8张(可选)</p>
+							<input type="file" id="photo" accept="image/*" />
+					</div>
+				</li>
+			</ul>
+			<span style="clear:both;"></span>
+		</div>
+	</div>
+
+	<div class="card_main">
+		<div class="divalign">
+			<div class="yjdf">
+			<div class="divopcaty"></div>
+				<div class="leftname">
+					<i class="icon iconfont sfzcyj">&#xe668;</i>
+					<span>支持一件代发</span>
+				</div>
+				<div class="rightval">
+					<span>元/件</span>
+					<input type="number" class="yjprice"/>
+				</div>
+			</div>
+		</div>
+
+		<div class="divalign">
+			<div class="yjdf">
+			   <div class="divopcaty"></div>
+				<div class="leftname">
+					<i class="icon iconfont zcpf">&#xe668;</i>
+					<span>支持批发</span>
+				</div>
+				<div class="rightval open">
+						<i class="icon iconfont">&#xe600;</i>
+				</div>
+			</div>
+			<ul class="uljglist">
+				<li>
+					<span class="span1">起批价:</span>
+					<input type="number" placeholder="≥2" class="input1" />
+					<span>件,</span>
+					<span class="span2">价格1</span>
+					<input type="number" placeholder="<一件代发价" class="input2"/>
+					<span>元</span>
+				</li>
+				<li>
+					<span class="span1">起批价:</span>
+					<input type="number" placeholder="≥起批量" class="input1" />
+					<span>件,</span>
+					<span class="span2">价格2</span>
+					<input type="number" placeholder="<价格1" class="input2"/>
+					<span>元</span>
+				</li>
+				<li>
+					<span class="span1">起批价:</span>
+					<input type="number" placeholder="≥起批量2" class="input1" />
+					<span>件,</span>
+					<span class="span2">价格3</span>
+					<input type="number" placeholder="<价格2" class="input2"/>
+					<span>元</span>
+				</li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="card_main padding">
+        <div class="guige">
+			<span class="active">单规格</span>
+			<span>多规格</span>
+		</div>
+		<!--单规格-->
+		<div class="dangg">
+			<span>库存</span>
+			<input type="number" placeholder="请填写库存" class="danggkc"/>
+		</div>
+		<!--多规格-->
+		<div class="duogg">
+			<ul>
+				<li>
+					<input type="text" class="txgg" placeholder="请填写规格(20个字符内)"/>
+					<input type="number" class="kc" placeholder="请填写库存"/>
+					<span class="removeli" style="cursor: pointer"><i class="icon iconfont">&#xe603;</i></span>
+				</li>
+			</ul>
+			<input type="button" value="添加规格" class="addgg"/>
+		</div>
+	</div>
+	<div class="card_main padding">
+		<div class="yunf">
+			<span>运费</span>
+			<input type="number" placeholder="请填写统一运费" class="yunfei"/>
+		</div>
+	</div>
+	<div class="bot_button">
+		<input type="button" value="下一步(补充)" class="nextbc next1"/>
+		<input type="button" value="直接发布" class="fabu"/>
+	</div>
+</div>
+<div class="two">
+	<div class="divtwo">
+		<span class="spanname">类目</span>
+		<input type="text" placeholder="(可选)" class="select_leimu"/>
+		<i class="icon iconfont">&#xe630;</i>
+	</div>
+	<div class="divtwo">
+			<span class="spanname">货号</span>
+			<input type="text" placeholder="36个字符内" class="goodno"/>
+			<span class="spannhz">***</span>
+		</div>
+		<div class="bot_button">
+				<input type="button" value="返回上一步" class="nextbc next2"/>
+				<input type="button" value="发布" class="fabu"/>
+			</div>	
+</div>
+<div class="listleimu" style="display:none;">
+<span class="leimuback">返回</span>
+<span class="clear">清空</span>
+<ul></ul>
+</div>
+
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script src="../../lib/mt_tsp.js"></script>
+<script type="text/javascript" src="../../lib/aliyun-oss-sdk.min.js"></script>
+<script src="../../lib/reInitOss.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../../lib/aliyunUpload.js"></script> 
+<script type="text/javascript" src="../js/publishPage.js"></script>
+</html>

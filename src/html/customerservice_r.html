@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>售后详情</title>
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" href="./../../lib/css/LArea.css">
+	<link rel="stylesheet" type="text/css" href="./../css/customerservice_r.debug.css">
+	<link rel="stylesheet" type="text/css" href="./../css/popchoose.debug.css">
+	<link rel="stylesheet" type="text/css" href="./../css/popconfirm.debug.css">
+</head>
+<body>
+	<div id="app" class="main">
+		<div class="hide apply_area">
+			<div class="goods_info clearfix">
+				<span class="goods_icon">
+					<img src="./../images/goods_0.jpg" alt="0">
+				</span>
+
+				<div class="goods_area clearfix">
+					<div class="goods_name clearfix">
+						<p>---</p>
+						<span>---</span>
+					</div>
+
+					<div class="goods_price clearfix">
+						<p>￥0.00</p>
+						<br>
+						<span>×0</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="describe clearfix">
+				<div class="type clearfix">
+					<label>服务类型</label>
+					<span>退货</span>
+				</div>
+
+				<div class="reason clearfix">
+					<label>申请原因</label>
+					<!-- <span>请选择</span> -->
+					<input type="text" name="reason" placeholder="请选择" maxlength="20" disabled value="">
+					<i class="icon-menu-right"></i>
+				</div>
+
+				<div class="refund clearfix">
+					<div class="refund_input clearfix">
+						<label>退款金额</label>
+						<span>￥</span>
+						<input type="text" name="refund" placeholder="" maxlength="20" value="0.00">
+					</div>
+
+					<div class="refund_max clearfix">
+						<p>最多￥<span class="maxRefund">0.00</span>，含运费￥<span class="freight">0.00</span></p>
+					</div>
+				</div>
+
+				<div class="explain clearfix">
+					<label>申请说明</label>
+					<div class="explain_input" contenteditable="plaintext-only" placeholder="选填"></div>
+					<span><b class="explain_num">0</b>/200</span>
+				</div>
+			</div>
+
+			<div class="voucher clearfix">
+				<label>上传凭证</label>
+				<div id="uploadPicBox" class="uploadPicBox clearfix"></div>
+			</div>
+
+			<div class="rule clearfix">
+				<p>已阅读并同意<a href="javascript:;">《蚁巢仅退款、退货、换货规则》</a></p>
+			</div>
+
+			<!-- 《蚁巢仅退款、退货、换货规则》 -->
+			@@include('./../template/afertSalesRule.html')
+
+			<div class="footer">
+				<button type="button" value="submit">提交</button>
+			</div>
+		</div>
+
+		<div class="hide status_area">
+			<!-- 已提交，等待供货商处理！ -->
+			<div class="hide rad_d wait_d">
+				<div class="timer_d">
+					<p>已提交，等待供货商处理！</p>
+					<span>---</span>
+				</div>
+
+				<div class="tips_d">
+					<ul>
+						<li>如果供货商同意您的申请，请按照已给出的退货地址寄货给供货商，并填写物流公司和物流单号。</li>
+						<li>如果供货商拒绝，请修改申请后重新发起，也可以申请仲裁介入。</li>
+						<li>逾期系统将自动同意退货申请。</li>
+					</ul>
+				</div>
+
+				<div class="btn clearfix">
+					<button type="button" value="withdrawn">撤销申请</button>
+				</div>
+			</div>
+
+			<!-- 退货关闭！ -->
+			<div class="hide rad_d close_d">
+				<div class="timer_d">
+					<p>退货关闭！</p>
+				</div>
+			</div>
+
+			<!-- 填写物流信息 -->
+			<div class="popInputLogistics hide">
+				<div id="logisticsComp" class="logisticsComp clearfix">
+					<label>物流公司</label>
+					<!-- <span id="demo">请选择</span> -->
+					<input id="demo" type="text" name="logiComp" value="" placeholder="请选择" disabled>
+					<i class="icon-menu-right"></i>
+				</div>
+
+				<div class="logisticsNum clearfix">
+					<label>物流单号</label>
+					<input type="text" name="logiNum" placeholder="请填写" maxlength="30">
+				</div>
+
+				<div class="logisticsSub">
+					<button type="button" value="logisticsNum">提交</button>
+				</div>
+			</div>
+
+			<!-- 供货商同意退货，请退货并填写物流信息！ -->
+			<div class="hide rad_d agree_d">
+				<div class="timer_d">
+					<p>供货商同意退货，请退货并填写物流信息！</p>
+					<span>---</span>
+				</div>
+
+				<div class="recipients clearfix">
+					<p class="hide clearfix">
+					    <i></i>
+					    <strong>---</strong>
+					    <b>---</b>
+					</p>
+					<p class="clearfix">
+						<i class="icon-adress-outline"></i>
+					    <span>---</span>
+					</p>
+					<p class="clearfix">
+						<i></i>
+					    <span>说明：请在包裹内放入纸条写明旺旺ID。</span>
+					</p>
+				</div>
+
+				<div class="tips_d">
+					<ul>
+						<li>请先将商品寄回，在收到换货商品后，点击“确认完成换货”。</li>
+						<li>如退货过程中遇双方无法协商解决的问题，可申请仲裁介入。</li>
+						<li>逾期系统将自动关闭此次退货申请。</li>
+					</ul>
+				</div>
+
+				<div class="btn agree_btn clearfix">
+					<!-- <button type="button" value="confirmOk">确认完成换货</button>
+					<button type="button" value="arbitrate">仲裁介入</button> -->
+					<button type="button" value="inputLogistics">填写物流信息</button>
+				</div>
+			</div>
+
+			<!-- 等待供货商收货并退款！ -->
+			<div class="hide rad_d wait_receipt">
+				<div class="timer_d">
+					<p>等待供货商收货并退款！</p>
+					<span>还剩04天23时59分59秒</span>
+				</div>
+
+				<div class="express_d">
+					<span>圆通快递</span>
+				</div>
+
+				<div class="logistics btn clearfix">
+					<span>65378087664432</span>
+					<button type="button" value="changeLogistics">修改物流信息</button>
+				</div>
+
+				<div class="tips_d">
+					<ul>
+						<li>逾期系统将自动关闭此次退货申请。</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 供货商未收到货，要求重新填写物流信息！ -->
+			<div class="hide rad_d not_receipt">
+				<div class="timer_d">
+					<p>供货商未收到货，要求重新填写物流信息！</p>
+					<span>还剩04天23时59分59秒</span>
+				</div>
+
+				<div class="express_d">
+					<span>圆通快递</span>
+				</div>
+
+				<div class="logistics btn clearfix">
+					<span>65378087664432</span>
+					<button type="button" value="changeLogistics">修改物流信息</button>
+				</div>
+
+				<div class="tips_d">
+					<ul>
+						<li>逾期系统将自动关闭此次退货申请。</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- 退货完成！ -->
+			<div class="hide rad_d ok_d">
+				<div class="timer_d">
+					<p>退款完成！</p>
+					<span></span>
+				</div>
+
+				<div class="express_d">
+					<span>圆通快递</span>
+				</div>
+
+				<div class="logistics btn clearfix">
+					<span>65378087664432</span>
+				</div>
+			</div>
+
+			<!-- 供货商拒绝您的退货申请！ -->
+			<div class="hide rad_d refuse_d">
+				<div class="timer_d">
+					<p>供货商拒绝您的退货申请！</p>
+					<span>还剩04天23时59分59秒</span>
+				</div>
+
+				<div class="tips_d">
+					<ul>
+						<li>拒绝理由：商品已影响二次销售，拒绝说明：啦啦啦啦。</li>
+						<li>您可以修改申请后再次发起或关闭退货申请，也可选择换货。</li>
+						<li>如您无法与供货商协商一致，可申请蚁巢仲裁介入处理。</li>
+						<li>逾期系统将自动关闭此次退货申请。</li>
+					</ul>
+				</div>
+
+				<div class="logistics btn clearfix">
+					<button type="button" value="modifyRestart">修改并重新发起</button>
+					<button type="button" value="closeApplic">关闭申请</button>
+					<button type="button" value="arbitrate">仲裁介入</button>
+					<button type="button" value="exchangeG">换货</button>
+				</div>
+			</div>
+
+
+			
+			<div class="records_d clearfix">
+				<p class="clearfix">
+					<label>退货处理记录</label>
+					<i class="icon-menu-right"></i>
+				</p>
+			</div>
+
+			<div class="returnRecord hide clearfix">
+				<div class="goback">
+					<p><i class="icon-menu-left"></i>返回</p>
+				</div>
+				<ul>
+					<!-- <li>
+						<div class="re_name clearfix">
+							<span><img src="./../images/icon_0.jpg" alt="0"></span>			
+                            <div>
+                            	<p>好管家竹木制品</p>
+                            	<span>2017-7-28 17:00:33</span>
+                            </div>
+						</div>
+						<div class="re_message">
+							<p>好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品好管家竹木制品</p>
+						</div>
+						<div class="re_voucher hide">
+							<label>上传凭证：</label>
+							<br>
+							<div class="clearfix">
+								<ul>
+									<li class="clearfix">
+										<span>
+											<img src="./../images/icon_0.jpg" alt="">
+										</span>
+										<span>
+											<img src="./../images/icon_0.jpg" alt="">
+										</span>
+										<span>
+											<img src="./../images/icon_0.jpg" alt="">
+										</span>
+										<span>
+											<img src="./../images/icon_0.jpg" alt="">
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+
+			<div class="instruct_d">
+				<p>
+					<label>申请说明</label>
+				</p>
+
+				<div class="goods_info clearfix">
+					<span class="goods_icon">
+						<img src="./../images/goods_0.jpg" alt="0">
+					</span>
+
+					<div class="goods_area clearfix">
+						<div class="goods_name clearfix">
+							<p></p>
+							<span></span>
+						</div>
+
+						<div class="goods_price clearfix">
+							<p></p>
+							<br>
+							<span>×1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="other_info">
+					<ul>
+						<li class="clearfix">
+							<label>申请原因:</label>
+							<span class="reason_s"></span>
+						</li>
+						<li class="clearfix">
+							<label>退款金额:</label>
+							<span class="refund_s"></span>
+						</li>
+						<li class="clearfix">
+							<label>申请说明:</label>
+							<span class="instruct_s"></span>
+						</li>
+						<li class="clearfix">
+							<label>申请时间:</label>
+							<span class="time_s"></span>
+						</li>
+						<li class="clearfix info_proof hide">
+							<label>凭证:</label>
+							<br>
+							<div class="voucher_s clearfix">
+								<ul>
+									<!-- <li class="clearfix">
+										<span>
+											<img src="./../images/icon_0.jpg" alt="">
+										</span>
+									</li> -->
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="supplier_info">
+				<p>
+					<label>供货商信息</label>
+				</p>
+
+				<div class="other_info">
+					<ul>
+						<li class="clearfix">
+							<label>仓储名称:</label>
+							<span class="name_s"></span>
+						</li>
+						<li class="clearfix">
+							<label>联系手机:</label>
+							<span class="tel_s"></span>
+						</li>
+						<li class="clearfix">
+							<label>联系座机:</label>
+							<span class="mobile_s"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="sold_out">
+				<button type="button" value="soldout">查看已下单商品</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/mock-min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/aliyun-oss-sdk.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/config.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/LArea.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/jweixin-1.2.0.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/customerservice_r.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/uploadpic.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/popconfirm.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/popchoose.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	document.body.onload = function() {
+		var CustomerServiceR = $.fn.CustomerServiceR();
+		CustomerServiceR.init({});
+	};
+</script>

@@ -1,0 +1,49 @@
+<!-- 
+author：石竹
+title:收银台
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>收银台</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css">
+	<link rel="stylesheet" type="text/css" href="../css/checkoutCounter.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div class="main">
+<header id="syhead">支付方式
+	<p>需支付：&nbsp;<span class="payMoney"><i>￥</i>0.<i>00</i></span></p>
+</header>
+<article id="syCon">
+	<ul class="payKinds">
+		<li id="wechat"><p><i class="icon-wechatpay"></i>微信支付</p><i class="icon-unchecked wx" ></i></li>
+		<!-- <li id="alipay"><p><i class="icon-wechatpay"></i>支付宝支付</p><i class="icon-unchecked zfb" ></i></li> -->
+		<li class="" id="blance"><p><i class="icon-wallet"></i>余额支付<span class="balance">(余额￥0.00)</span></p><i class="icon-unchecked ye"></i></li>
+		<li id="precard"><p><i class="icon-preMemoryCard-outline"></i>预存卡-<span class="cardName"></span><i class="icon-nabla nabla"></i></p><i class="icon-unchecked pc" ></i></li>
+		<!-- <li class="cardDetail">
+			<div><p class="fontbig">fewf</p><p class="fontsmall">fwefewf</p></div>
+			<p class="fontsmall">发潍坊潍坊</p>
+		</li> -->
+	</ul>
+</article>
+</div>
+<footer class="yicon-tabbar">
+	<p id="gopayBtn">
+		去支付&nbsp;(<span id="fen">00</span>分<span id="miao">00</span>秒)
+	</p>
+</footer> 
+</body>
+<script type="text/javascript" src="../../lib/mytest.js"></script>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/checkoutCounter.js"></script>
+</html>

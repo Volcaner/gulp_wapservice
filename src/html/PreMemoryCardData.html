@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>预存卡使用数据</title>
+	<link rel="stylesheet" type="text/css" href="../css/PreMemoryCardData.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/hui.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/css/dropload.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+	<script type="text/javascript" src="../../lib/hui-picker.js"></script>
+</head>
+<body class="padding">
+	<div class="yingying"></div>
+	<!--alert-->
+	<div class="divalert" style="display:none;">
+		<p class="tiptxt">确定删除预存卡吗？删除后不可恢复</p>
+		<div class="btngroup">
+			<input type="button" value="确定" class="qd_sure"/>
+			<input type="button" value="取消" class="qx_canle"/>
+		</div>
+	</div>
+	<!--无信息-->
+		<div class="nodata">
+			<img src="../images/bg5.png"/>
+			<p>暂无预存卡使用数据</p>
+		</div>
+    <div class="card_main">
+		<div class="divselectlist" style="display:none;">
+			<ul class="ulselect">
+				<li class="btn1">
+					<span class="leftspan">预存卡名称/卡号</span>
+					<i class="icon iconfont">&#xe630;</i>
+					<span class="rightspan ycktxt"></span>
+				</li>
+				<li class="btn2">
+					<span class="leftspan">使用时间段</span>
+					<i class="icon iconfont">&#xe630;</i>
+					<span class="rightspan ycktime"></span>
+				</li>
+				<li class="btn3">
+					<span class="leftspan">仓储名称</span>
+					<i class="icon iconfont">&#xe630;</i>
+					<span class="rightspan yckname"></span>
+				</li>
+			</ul>
+			<div class="btn_group">
+				<input type="button" value="重置" class="resest"/>
+				<input type="button" value="确定" class="sure"/>
+			</div>
+		</div>
+		<p class="p_txt">
+			<i class="icon iconfont">&#xe62f;</i>
+			<span>筛选</span>
+		</p>
+		<div class="divtitle"><p>已使用金额:<span class="ysy">0.00</span></p><p>未使用金额:<span class="wsy">0.00</span></p></div>
+		<div id="content">
+		<ul class="dllist"></ul>
+		</div>
+			<!--使用时间段-->
+	<div class="sytimeduan" style="display:none;z-index:14;">
+			<ul class="timelist">
+			   <li>全部</li>
+			   <li>近一周</li>
+			   <li>近一个月</li>
+			   <li>近三个月</li>
+			   <li>近半年</li>
+			   <li>近一年</li>
+			</ul>
+			<span class="timeqx">取消</span>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script src="../../lib/dropload.js"></script>
+<script>var page = 0,cardIdOrcardName='',time=0,supshopName='';</script>
+<script type="text/javascript" src="../js/dropload_PreMemoryCardData.js"></script>
+<script type="text/javascript" src="../js/PreMemoryCardData.js"></script>
+</html>

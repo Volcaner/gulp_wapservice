@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>update header icon(更新头像)</title>
+	<style type="text/css" media="screen">
+		
+	</style>
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../css/updateheadericon.debug.css">
+</head>
+<body>
+	<input type="file" name="files" onchange="showUpdateHeader(event)">
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/mock-min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/config.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/aliyun-oss-sdk.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/updateheadericon.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	function showUpdateHeader(e) {
+		var updateHeaderIconObj = new UpdateHeaderIcon();
+		var obj = {
+			file: e.currentTarget.files[0],
+		};
+		var name = e.currentTarget.files[0].name.split('.')[0];
+		updateHeaderIconObj.init(obj, function(imageData) {
+			console.log(imageData);
+
+			// base64 to file
+			var arr = imageData.split(',');
+			var type = arr[0].match(/:(.*?);/)[1];
+			var bstr = window.atob(arr[1]);   
+			var fileExt = type.split('/')[1];
+			var n = bstr.length;
+			var u8arr = new Uint8Array(n);
+			while(n--) {
+				u8arr[n] = bstr.charCodeAt(n);
+			}
+			var fileResult = new File([u8arr],name+"."+fileExt,{type:type});
+
+			// aliyun
+			var re='oss-cn-hangzhou';
+			var KeyId='LTAIuio3BmR3xlxV';
+			var KeySecret='SaNNLqkclS0UbU0HzqtR9m0r8tyx47';
+			var bu='ngsimage';
+			var client = new OSS.Wrapper({
+			    region: re,
+			    accessKeyId: KeyId,
+			    accessKeySecret: KeySecret,
+			    bucket: bu
+			});
+
+			client.multipartUpload(showTime()+fileResult.name, fileResult).then(function (result) {
+				var imgurl = result.url;
+				$("body").append('<img src="'+imgurl+'">');
+				updateHeaderIconObj.close();
+			}).catch(function (err) {
+				console.log(err);
+			});
+		});
+	};
+
+	function showTime(){
+		var date = new Date();
+		var year = date.getFullYear();
+		var month = date.getMonth()+1;
+		var day = date.getDate();
+		var hour = date.getHours();
+		var minute = date.getMinutes();
+		var second = date.getSeconds();
+		var str=(year+''+month+''+day+''+hour+''+minute+''+second);
+		return str;
+	};
+</script>

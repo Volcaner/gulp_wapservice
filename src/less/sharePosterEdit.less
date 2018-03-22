@@ -1,0 +1,184 @@
+/*分享海报*/
+@charset "utf-8";
+body{
+	height: 100%;
+	background: #fff;
+}
+.sharePoster{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	dt,dd{
+		position: absolute;
+		display: none;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+	}
+	dt{
+		display: block;
+	}
+}
+
+
+.sharePoster_editBox{
+	.headBtnBox{
+		height: 88px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background: #eee;
+		input{
+			height: 100%;
+			font-size: 28px;
+			color: #212121;
+			cursor: pointer;
+			padding: 0 30px;
+			background: transparent;
+		}
+	}
+	.sp_edit{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		padding: 30px 0;
+		overflow: hidden;
+
+		
+
+	}
+	
+}
+.checkImgListBox{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 555px;
+	padding: 10px 0px 10px 10px;
+	border:2px solid #eee;
+	box-shadow: 0px 0px 10px #333;
+	background: #fff;
+	z-index: 101;
+	.checkImgList{
+		flex: 0 1 auto;
+		display: flex;
+		width: 500px;
+		height: 100%;
+		overflow-x: auto;
+		overflow-y: hidden;
+		li{
+			flex: 0 1 104px;
+			white-space: nowrap;
+			width: 104px;
+			height: 104px;
+			margin-right: 10px;
+			border:2px solid #d2d2d2;
+			a{
+				width:100px;
+				height:100px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img{
+					max-width: 100px;
+					max-height: 100px;
+				}
+			}
+			
+		}
+		li.checkimgActive{
+			border-color: #f44336;
+		}
+		
+	}
+	>i{
+		flex: 0 1 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 45px;
+		height: 100px;
+		cursor: pointer;
+		color: #999;
+		font-size: 26px;
+	}
+}
+.sp_dataList{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	.sp_imgListBox{
+		display: flex;
+		width: 730px;
+		margin: 0 10px;
+		padding: 10px 0;
+		margin-bottom: 20px;
+		overflow-x: auto;
+		overflow-y: hidden;
+		li{
+			flex: 0 1 140px;
+			width: 140px;
+			height: 140px;
+			border:2px solid #d2d2d2;
+			margin-left: 20px;
+			white-space: nowrap;
+			cursor:pointer;
+			img{
+				width: 136px;
+				height: 136px;
+			}
+
+		}
+		li.imgActive{
+			border-color: #f44336;
+			transform: translateY(-10px);
+			transition: all 0.1s;
+		}
+	}
+	.sp_kindsListBox{
+		width: 100%;
+		height: 88px;
+		align-items: center;
+		padding: 0 30px;
+		display: flex;
+		background: #eee;
+		li{
+			flex: 1;
+			display: inline-flex;
+			align-items: center;
+			height: 100%;
+			padding: 0 45px;
+			font-size: 28px;
+			color: #212121;
+		}
+		li.kindsActive{
+			color: #f44336;
+
+		}
+	}
+}
+
+/*--生成图片后--*/
+.sharePoster_ImgBox{
+	padding-top: 100px;
+	.sp_imgbox{
+		width: 100%;
+		text-align: center;
+		padding: 50px 0;
+		img{
+			width: 690px;
+			height: 690px;
+		}
+	}
+	.sp_instruction{
+		font-size: 28px;
+		color: #212121;
+		width: 100%;
+		padding: 14px 0;
+		text-align: center;
+	}
+}
+

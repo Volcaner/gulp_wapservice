@@ -1,0 +1,83 @@
+<!-- 
+author：石竹
+title:申请售后
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>售后详情</title>
+	<!-- <link rel="stylesheet"  href="../css/LArea.css"/> -->
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css">
+	<link rel="stylesheet" type="text/css" href="../css/afterSalseDetail.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<header class="asd_head">
+	<p class="comment">已提交，等待供货商处理！</p>
+	<p class="tips"></p>
+</header>
+<div class="asd_apply">
+	<ul>
+		<li>如果供货商同意您的申请，系统将退款给您。</li>
+		<li>如果供货商已发货，本次申请将关闭。</li>
+		<li>逾期系统将自动同意仅退款申请。</li>
+	</ul>
+	<p><input type="button" value="撤销申请" class="click-btn-redcolor revoke"></p>
+</div>
+<div class="doingList">
+	<a class="moreRecord"><span>仅退款处理记录</span>
+	<i class="icon-menu-right"></i>
+	</a>
+</div>
+<article class="main">
+	<ul class="rp_conBox">
+		<li class="goodsList">
+			<p class="applymes_title">申请说明</p>
+			<section>
+				<div class="goodsContent">
+					<a href="javascript:;"><img class="header"></a>
+					<p>
+						<a href="javascript:;"><span class="title"></span></a>
+						<span class="sku"></span>
+					</p>
+					<p>
+						<span class="price"></span>
+						<span class="count"></span>
+					</p>
+				</div>
+			</section>
+			<div class="ads_content">
+				<p>申请原因:<span class="reason"></span></p>
+				<p>退款金额:<span class="refund"></span></p>
+				<p class="applicationInstruction">申请说明:<span class="explain"></span></p>
+				<p class="applyTimeP">申请时间:<span class="applyTime"></span></p>
+			</div>
+		</li>
+	</ul>
+</article>
+<dl class="storageInfor">
+	<dt>供货商信息</dt>
+	<dd>
+		<p>仓储名称:<span class="shopName"></span></p>
+		<p class="telP">联系手机:<span class="tel"></span></p>
+		<p class="landlineP">联系座机:<span class="landline"></span></p>
+	</dd>
+</dl>
+<div class="button-box0 centerX applyBtnBox">
+    <input type="button" value="查看已下单商品"  class="button-sure button-active look">
+</div>
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../js/public.js"></script>
+<script type="text/javascript" src="./../js/afterSalseDetail.js"></script>
+<!-- <script type="text/javascript" src="../js/LArea.js"></script> -->
+
+</html>

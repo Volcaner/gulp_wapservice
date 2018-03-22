@@ -1,0 +1,144 @@
+.changeIcon{
+	position: fixed;
+	top: 0;
+	width: 750px;
+	height: 100%;
+	background: #fff;
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%); 	/* IE 9 */
+	-moz-transform: translateX(-50%); 	/* Firefox */
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%); 	/* Opera */
+}
+.updateHeadpic{
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+}
+.clearfix:after{
+	content: "";
+	display: block;
+	zoom: 1;
+	clear: both;
+
+}
+.canBox{
+	margin: 0 auto;
+	display: block;
+	width: 100%;
+	max-width: 750px;
+}
+.canvas1{
+	width: 100%;
+	background: url(./../images/bg.png);
+	background-repeat: repeat;
+	border: 1px solid #fff;
+}
+.canvas2{
+	position: absolute;
+	visibility: hidden;
+	background: rgba(255, 255, 255, 0);
+}
+.files{
+	position:fixed;
+	bottom:145px;
+	left:0;
+	width:80%;
+	height:90px;
+	// background-color: #aaa;
+	border-radius: 45px 45px;
+	border: 1px solid #009688;
+	left: 50%;
+	transform: translateX(-50%);
+	-ms-transform: translateX(-50%); 	/* IE 9 */
+	-moz-transform: translateX(-50%); 	/* Firefox */
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */
+	-o-transform: translateX(-50%); 	/* Opera */
+}
+.files>p{
+	margin: 0 0;
+	width: 100%;
+	height: 90px;
+	line-height: 90px;
+	float: left;
+	color: #009688;
+	font-size: 30px;
+	// vertical-align: middle;
+	text-align: center;
+}
+input[type=file]{
+	font-size:0;
+	width:100%;
+	height:100%;
+	opacity:0;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:10;
+	border: none;
+	// background-color: #ddd;
+	border-right: 1px solid #fff;
+}
+.show{
+	width: 200px;
+	display: block;
+	margin: 0 auto;
+	>img{
+		width: 200px;
+		border-radius: 200px 200px;
+	}
+}
+.showBtn_cls{
+	position: absolute;
+	background: none;
+	border: none;
+	bottom: 0;
+	float: right;
+	color: #fff;
+	font-size: 30px;
+	vertical-align: middle;
+	text-align: center;
+	height: 100%;
+	width: 50%;
+	border-left: 1px solid #fff;
+}
+.confirm{
+	position: fixed;
+	bottom: 0;
+	left:0;
+	width:100%;
+}
+.btn{
+	border: none;
+	font-size: 30px;
+	vertical-align: middle;
+	text-align: center;
+	height: 100px;
+	width: 50%;
+	// border-radius: 5px 5px;
+}
+.postBtn_cls{
+	float: right;
+	// margin: 22px 22px 0 0;
+	background: #009688;
+	color: #fff;
+}
+.postBtn_cls:active{
+	background: #008577;
+	color: #eee;
+}
+
+.cancelBtn_cls{
+	float: left;
+	// margin: 22px 0 0 22px;
+	background: #fff;
+	color: #333;
+}
+.cancelBtn_cls:active{
+	background: #eee;
+	color: #222;
+}

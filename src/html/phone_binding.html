@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>账户绑定</title>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/base.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/yich_UI.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/mt_tsp.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/phone_binding.debug.css"/>
+	<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="bindingPhoneDomain">
+		<div class="bindingPhoneDiv">
+			<div class="passwordInput noBottom">
+				<span class="bindingNumber">绑定手机号</span><span class="bindingNum"></span>
+			</div>
+		</div>
+		<button class="confirm changeBindingPhone confirmClick">更换绑定手机</button>
+	</div>
+	<div class="changeBindingPhoneDomain">
+		<div class="passwordModule">
+			<div class="passwordInput">
+				<span class="phoneNumber">手机号</span><span class="number"></span>
+				<span class="click-btn-redcolor clickFloatRight identifyingBtn">获取验证码</span>
+			</div>
+			<div class="passwordInput noBottom">
+				<span class="phoneNumber">验证码</span><input class="oldIdentifyingCode" type="tel" placeholder="请输入验证码">
+			</div>
+		</div>
+		<button class="confirm next confirmNext" disabled="true">下一步</button>
+	</div>
+	<div class="newBindingPhoneDomain">
+		<div class="passwordModule">
+			<div class="passwordInput">
+				<span class="newPhoneNumber">新手机号</span><input class="newPhoneNumberInput" type="tel" placeholder="请输入新手机号" maxlength="11">
+				<span class="click-btn-redcolor clickFloatRight newIdentifyingBtn">获取验证码</span>
+			</div>
+			<div class="passwordInput noBottom">
+				<span class="newPhoneNumber">验证码</span><input class="newIdentifyingCode" type="tel" placeholder="请输入验证码">
+			</div>
+		</div>
+		<button class="confirm sure confirmNext">确定</button>
+	</div>
+	<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../dist/js/public.js" charset="utf-8"></script>
+	<script src="./../../dist/js/phone_binding.js" charset="utf-8"></script>
+</body>
+</html>

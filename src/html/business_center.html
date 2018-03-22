@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>商户中心</title>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/base.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/yich_UI.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/business_center.debug.css"/>
+	<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="header">
+		<!-- <a class="setting"><i class="icon-set iconFont"></i><span class="setTitle">设置</span></a> -->
+		<a class="setting" href="/yich/wapservice/dist/html/business_center_setting.html"><span class="click-btn-redback"><i class="icon-set"></i>设置</span></a>
+		<div class="headPortrait">
+			<img class="head" src="./../../dist/images/headPortrait.png">
+		</div>
+		<p class="name"></p>
+	</div>
+	<div class="collect">
+		<div class="collection">
+			<a class="collectionLibrary" href="/yich/wap/src/html/cailuku.html">
+				<p class='count'><span class="LibrarycollectionCount">0</span><span class="unit">&nbsp;件</span></p>
+				<p class="collectTitle">采录库</p>
+			</a>
+		</div>
+		<div class="collection">
+			<a class="collectionLibrary" href="/yich/wapservice/dist/html/followedstorage.html">
+				<p class='count'><span class="Attentionstorage">0</span>/<span class="SCCount">0</span><span class="unit">&nbsp;个</span></p>
+				<p class="collectTitle">关注/收藏的仓储</p>
+			</a>
+		</div>
+		<div class="collection">
+			<a class="collectionLibrary" href="/yich/wap/src/html/fwh_caigoudan.html">
+				<p class='count'><span class="PurchaseorderCount">0</span><span class="unit">&nbsp;件</span></p>
+				<p class="collectTitle">采购单</p>
+			</a>
+		</div>
+	</div>
+	<div class="goodUnderOrder">
+		<a class="more" href="/yich/wapservice/dist/html/orderAllGoods.html"><span class="redIconFontBg"><i class="icon-order-nohight orderFont"></i></span>已下单商品<p class="menu-more"><span class="lookMore">查看全部</span><i class="icon-menu-right"></i></p></a>
+		<div class="collect details">
+			<div class="collection">
+				<a class="collectionLibrary" href="/yich/wapservice/dist/html/orderNoPay.html">
+					<p class='count nopayCount'>0</p>
+					<p class="collectTitle">未付款</p>
+				</a>
+			</div>
+			<div class="collection">
+				<a class="collectionLibrary" href="/yich/wapservice/dist/html/orderNoSend.html">
+					<p class='count nosendCount'>0</p>
+					<p class="collectTitle">未发货</p>
+				</a>
+			</div>
+			<div class="collection">
+				<a class="collectionLibrary" href="/yich/wapservice/dist/html/orderHadSend.html">
+					<p class='count sendedCount'>0</p>
+					<p class="collectTitle">已发货</p>
+				</a>
+			</div>
+			<div class="collection">
+				<a class="collectionLibrary" href="/yich/wapservice/dist/html/orderReturnning.html">
+					<p class='count returningCount'>0</p>
+					<p class="collectTitle">退货中</p>
+				</a>
+			</div>
+			<div class="collection">
+				<a class="collectionLibrary" href="/yich/wapservice/dist/html/orderChanging.html">
+					<p class='count changingCount'>0</p>
+					<p class="collectTitle">换货中</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="dataAndPay">
+		<a class="more" href="/yich/wapservice/dist/html/transactionData.html"><span class="redIconFontBg yellowBg"><i class="icon-cooper orderFont"></i></span>交易数据<p class="menu-more"><i class="icon-menu-right"></i></p></a>
+		<a class="more" href="/yich/wapservice/dist/html/PaymentManagement.html"><span class="redIconFontBg blueBg"><i class="icon-pay orderFont"></i></span>支付管理<p class="menu-more"><i class="icon-menu-right"></i></p></a>
+		<a class="more" href="/yich/wapservice/dist/html/orderAllGoodsResale.html"><span class="redIconFontBg purpleBg"><i class="icon-resale-outline orderFont"></i></span>转售订单<p class="menu-more"><i class="icon-menu-right"></i></p></a>
+		<a class="more noBottom" href="/yich/wapservice/dist/html/PreMemoryCard.html"><span class="redIconFontBg" style="background:#00d0ba;"><i class="icon-yucunqia orderFont"></i></span>预存卡<p class="menu-more"><i class="icon-menu-right"></i></p></a>
+		
+	</div>
+	<footer class="yicon-tabbar">
+	    <a class="tabbar-items tabbar-active compatible" href="/yich/wapservice/dist/html/business_center.html">
+	        <span class="tabbar-icon">
+	            <i class="icon-usercenter icon-font-nomal"></i>
+	        </span>
+	        <span class="tabbar-text">商户中心</span>
+	    </a>
+	    <a class="tabbar-items compatible" href="/yich/wap/src/html/fwh_caigoudan.html" style=" position:relative;">
+	        <span class="tabbar-icon">
+	            <i class="icon-purch-outline icon-font-nomal"></i>
+	 
+	        </span>
+	        <span class="tabbar-text">采购单</span>
+	        <span class="countcg" id='countcg'>0</span>
+	    </a>
+	    <a class="tabbar-items compatible" href="/yich/wapservice/dist/html/orderAllGoods.html">
+	        <span class="tabbar-icon">
+	            <i class="icon-order-outline icon-font-nomal"></i>
+	        </span>
+	        <span class="tabbar-text">订单</span>
+	   </a>
+	   <a class="tabbar-items compatible" href="/yich/wap/src/html/cailuku.html">
+	        <span class="tabbar-icon">
+	            <i class="icon-store-outline icon-font-nomal"></i>
+	        </span>
+	        <span class="tabbar-text">采录库</span>
+	    </a>
+    </footer> 
+	<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../dist/js/business_center.js" charset="utf-8"></script>
+</body>
+</html>

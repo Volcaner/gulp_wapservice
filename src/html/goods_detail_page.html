@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8"/>
+	<!-- <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui"> -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>商品详情页</title>
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" href="./../../lib/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./../css/details.debug.css">
+	<link rel="stylesheet" type="text/css" href="./../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="./../css/afterSalseDetail.debug.css">
+</head>
+
+<body>
+	<!-- pageloading -->
+	<div id="pageloading">
+	   <img src="../images/pageloading.gif">
+	</div>
+
+	<!-- details -->
+	<div id="details" class="details clearfix">
+		<div class="swipe-area clearfix">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+		           <!--  <div class="swiper-slide">Slide 1</div>
+		            <div class="swiper-slide">Slide 2</div>
+		            <div class="swiper-slide">Slide 3</div>
+		            <div class="swiper-slide">Slide 4</div> -->
+		        </div>
+
+		        <!-- Add Pagination -->
+	       		<div class="swiper-pagination"></div>
+			</div>
+		</div>
+
+		<div class="theme clearfix">
+			<span></span>
+		</div>
+
+		<div class="price clearfix">
+			<span></span>
+			<p class="partnerPrice hide">合作商价格</p>
+			<p class="onePiece hide">一件代发</p>
+			<i class="share icon-share"></i>
+		</div>
+
+		<div class="breif-info clearfix">
+			<div class="store">
+				<span>库存：</span>
+				<span></span>
+			</div>
+			<div class="departureport">
+				<span>发货地：</span>
+				<span></span>
+			</div>
+			<div class="sales">
+				<span>销量：</span>
+				<span></span>
+			</div>
+		</div>
+
+		<div class="detail-info clearfix">
+
+			<span>查看规格和价格</span>
+
+			<b class="icon-menu-right"></b>
+		</div>
+
+		<div class="specification clearfix">
+
+			<span>产品参数</span>
+
+			<b class="icon-menu-right"></b>
+		</div>
+
+		<div class="otherinfo">
+			<div class="twisting">
+				<span class="twist_label">价格波动：</span>
+				<span class="arrow icon-cutdown"></span>
+				<span class="twist_price"></span>
+			</div>
+			<div class="shelf">
+				<span class="shelf_label">上架时间：</span>
+				<span class="shelf_time"></span>
+			</div>
+		</div>
+
+		<div class="pmc hide">
+			<a class="icon iconfont">&#xe633;</a>
+			<span>购买预存卡，享折扣</span>
+			<b class="icon-menu-right"></b>
+		</div>
+
+		<div class="cooperate">
+			<p class="clearfix">
+				<a class="icon iconfont">&#xe623;</a>
+				<span>什么是合作？如何获得合作优惠价？</span>
+			</p>
+		</div>
+
+		<div class="details_page">  <!-- detail page -->
+
+			<div class="deta_title">——&nbsp;&nbsp;详情页&nbsp;&nbsp;——</div>
+
+			<div class="deta_pics">  <!-- v-for -->
+
+				<!-- <ul>
+
+					<li><img src="./../images/deta1.jpg" alt="详情"></li>
+
+					<li><img src="./../images/deta2.jpg" alt="详情"></li>
+
+				</ul>
+
+
+
+				<div class="qrcode">
+
+					<img src="./../images/qrcode.png" alt="qrcode">
+
+					<p>请长按识别</p>
+
+					<p>关注后获取更多内容</p>
+
+				</div> -->
+
+			</div>
+		</div>
+
+		<div class="return_top hide">
+
+			<a href="#details">TOP</a>
+		</div>
+
+		<!-- footer -->
+		<footer class="">
+        	<div class="yicon-tabbar footer_w">
+        		<a class="tabbar-items" href="/yich/wapservice/dist/html/business_center.html">
+	                <span class="tabbar-icon">
+	                    <i class="icon-usercenter-outline icon-font-nomal"></i>
+	                </span>
+	                <span class="tabbar-text">商户中心</span>
+	            </a>
+	            <a class="tabbar-items toStorageIndex" href="javascript:;">
+	                <span class="tabbar-icon">
+	                    <i class="icon-shops-outline icon-font-nomal"></i>
+	                </span>
+	                <span class="tabbar-text">仓储首页</span>
+	            </a>
+	            <a class="tabbar-items" href="/yich/wap/src/html/fwh_caigoudan.html">
+	                <span class="tabbar-icon">
+	                    <i class="icon-purch-outline icon-font-nomal"></i>
+	                </span>
+	                <span class="tabbar-text">采购单</span>
+	                <span id="count" class="order_num hide">0</span>
+	            </a>
+	            <a class="tabbar-items" href="/yich/wap/src/html/cailuku.html">
+	                <span class="tabbar-icon">
+	                    <i class="icon-store-outline icon-font-nomal"></i>
+	                </span>
+	                <span class="tabbar-text">采录库</span>
+	                <span id="lib_count" class="lib_num hide">0</span>
+	            </a>
+        	</div>
+        	<div class="yicon-tabbar footer_r">
+        		<!-- 采录 -->
+				<div class="record_btn">
+					<input type="button" name="record-btn" value="采录">
+				</div>
+
+				<!-- 采录ok -->  <!-- after click "采录" -->
+				<div class="recordok_btn hide">
+					<input class="btn_cls ok_btn" type="button" name="recordok-btn" value="加入采购单">
+					<input class="btn_cls place_btn" type="button" name="place-btn" value="下单">
+				</div>
+
+				<!-- 商品已下架 -->
+				<div class="hasLaidOff hide">
+					<input type="button" name="hasLaidOff-btn" value="商品已下架">
+				</div>
+        	</div>
+        </footer>
+
+
+
+		<!-- choose the type of goods -->
+		<div id="chooseType" class="chooseType hide">
+			<div class="choHeader">
+				<div class="goodsPic">
+					<img src="./../images/ant_0.png" alt="good">
+				</div>
+				<div class="goodsInfo">
+					<h5></h5>
+					<p class="goodnum"></p>
+					<!-- <p class="partnerPrice hide">合作商价格</p>  -->   <!-- TODO:v-show -->
+				</div>
+				<i class="icon iconfont tkClose">&#xe603;</i>
+				<p class="countPrice"><i class="icon-question"></i>如何计算价格</p>
+			</div>
+
+			<div class="choPrice">
+				<!-- 加 vue 改成 v-for 循环 -->
+				<ul>
+					<!-- <li>
+						<span>蓝色 vgfdagreagrfdesgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfdsgfds</span><b>(库存：804件)</b>
+						<ul>
+							<li>
+								<span>￥63.00</span>
+								<p>￥63.00</p>
+								<b>1件</b> 
+							</li>
+						</ul>
+					</li> -->
+				</ul>
+			</div>
+
+			<div class="choFooter">
+				<input type="button" name="choFooter-btn" value="完成">
+			</div>
+		</div>
+
+		<!-- 如何计算价格,计算价格提示-页面写死 -->
+		<div id="js_mtTips">
+			<dl>
+				<dt></dt>
+				<dd>
+					<div class="js_con">
+						<ul>
+							<li><i class="icon-question"></i>如何加算价格？</li>
+							<li>
+								<p>SKU的单价根据该商品的采购数量之和来确定。<br/>例如：某采购商采购了一种商品的多个SKU，分别为红色6件，蓝色8件。<br/>这些SKU的价格分别如下：</p>
+							</li>
+							<li>
+								<p>红色：<span class="btn-display-pink">合作商价格</span></p>
+								<ul>
+									<li>
+										<span>￥63.00</span>
+										<del>￥68.00</del>
+										<span>1-1件:</span>
+									</li>
+									<li>
+										<span>￥60.00</span>
+										<del>￥65.00</del>
+										<span>2-10件:</span>
+									</li>
+									<li>
+										<span>￥57.00</span>
+										<del>￥62.00</del>
+										<span>11-20件:</span>
+									</li>
+									<li>
+										<span>￥52.00</span>
+										<del>￥57.00</del>
+										<span>≥21件:</span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>蓝色：<span class="btn-display-pink">合作商价格</span></p>
+								<ul>
+									<li>
+										<span>￥62.00</span>
+										<del>￥67.00</del>
+										<span>1-1件:</span>
+									</li>
+									<li>
+										<span>￥58.00</span>
+										<del>￥63.00</del>
+										<span>2-10件:</span>
+									</li>
+									<li>
+										<span>￥54.00</span>
+										<del>￥59.00</del>
+										<span>11-20件:</span>
+									</li>
+									<li>
+										<span>￥52.00</span>
+										<del>￥57.00</del>
+										<span>≥21件:</span>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<p>计算总价的思路应为：</p>
+								<p>因为采购总数量为6+8=14，所以找到14件相对应的价格区间，分别为红色57.00元，蓝色54.00元，所以总价应为：57.00*6+54.00*8=774.00元。</p>
+							</li>
+						</ul>
+						<p id="js_mtcancel"><i class="icon-error-outline"></i></p>
+					</div>
+					
+				</dd>
+			</dl>
+		</div>
+
+		<!-- product params -->
+		<div id="product_params" class="product_params hide">
+
+			<div class="params">
+
+				<p>商品参数</p>
+
+				<ul class="clearfix">   <!-- v-for -->
+
+					<!-- <li class="clearfix"><p>包装体积</p><b>20.5*24.5*35</b></li>
+
+					<li class="clearfix"><p>品牌</p><b>MAXCOOK</b></li>
+
+					<li class="clearfix"><p>毛重</p><b>3.5KG</b></li>
+
+					<li class="clearfix"><p>货号</p><b>MC407990331-000</b></li>
+
+					<li class="clearfix"><p>材质</p><b>陶瓷</b></li>
+
+					<li class="clearfix"><p>容量</p><b>4L</b></li>
+
+					<li class="clearfix"><p>颜色分类</p><b>黄色，橘色，绿色，红色</b></li>
+
+					<li class="clearfix"><p>产地</p><b>中国大陆</b></li> -->
+
+				</ul>
+
+			</div>
+
+			<div class="paFooter">
+
+				<input type="button" name="paFooter-btn" value="完成">
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<div id="similarGoods" class="similarGoods hide">
+
+		<div class="removedOrTransferred">
+
+			<!-- <img src="./../images/icon_1.png" alt=""> -->
+			<i class="icon iconfont">&#xe612;</i>
+
+			<p>商品已删除或被转移</p>
+
+		</div>
+
+
+
+		<div class="similarGoodsRecommend hide">
+
+			<p>相似商品推荐</p>
+
+			<ul>
+
+				<!-- <li class="clearfix">
+
+					<img data-src="./../images/load.gif" src="./../images/hszc.jpg" alt="pic">
+
+					<div class="canRecord">
+
+						<div class="rTitle">
+
+							<p>好管家彩色四色糖果色砂锅明火砂锅红色黄色桔色绿色6L</p>
+
+						</div>
+
+						<div class="onePrice clearfix">
+
+							<span class="partner">合作商价格</span>
+
+							<span class="oneAct">一件代发</span>
+
+							<span class="rPrice">￥999.00</span>
+
+						</div>
+
+						<div class="morePrice clearfix">
+
+							<ul>
+
+								<li class="clearfix">
+
+									<p>￥60.00</p>
+
+									<span>2-10件</span>
+
+								</li>
+
+								<li class="clearfix">
+
+									<p>￥57.00</p>
+
+									<span>2-10件</span>
+
+								</li>
+
+								<li class="clearfix">
+
+									<p>￥52.00</p>
+
+									<span>2-10件</span>
+
+								</li>
+
+							</ul>
+
+						</div>
+
+						<div class="rRecord_btn clearfix">
+
+							<input type="button" name="rRecord_btn" value="采录">
+
+						</div>
+
+					</div>
+
+				</li> -->
+
+			</ul>
+
+		</div>
+
+	</div>
+</body>
+
+</html>	
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/mock-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/swiper.min.js"></script>
+<script src="./../../lib/jweixin-1.2.0.js"></script>
+<script src="./../js/goods_detail_page.js" type="text/javascript" charset="utf-8" defer></script>
+<script>
+	document.body.onload = function(){
+		var GoodsDetailPage = $.fn.GoodsDetailPage();
+		GoodsDetailPage.init({aaa: "wocaoni"});
+	};
+</script>

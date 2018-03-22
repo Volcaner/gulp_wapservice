@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="hotcss" content="design-width=750">
+	<!--css-->
+	<link rel="stylesheet" href="./../../lib/css/swiper.min.css">
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../lib/font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./../css/details_resale.debug.css">
+	<title>商品详情页</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<!-- pageloading -->
+	<div id="pageloading">
+	   <img src="../images/pageloading.gif">
+	</div>
+	<!-- details -->
+	<div id="details" class="details clearfix">
+		<div class="swipe-area clearfix">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+		           <!--  <div class="swiper-slide">Slide 1</div>
+		            <div class="swiper-slide">Slide 2</div>
+		            <div class="swiper-slide">Slide 3</div>
+		            <div class="swiper-slide">Slide 4</div> -->
+		        </div>
+
+		        <!-- Add Pagination -->
+	       		<div class="swiper-pagination"></div>
+			</div>
+		</div>
+
+		<div class="theme clearfix">
+			<span></span>
+		</div>
+
+		<div class="price clearfix">
+			<span></span>
+			<p class="partnerPrice hide">合作商价格</p>
+		</div>
+
+		<div class="detail-info clearfix">
+			<span>查看规格和价格</span>
+			<b class="icon iconfont">&#xe630;</b>
+		</div>
+
+		<div class="specification clearfix">
+			<span>产品参数</span>
+			<b class="icon iconfont">&#xe630;</b>
+		</div>
+
+		<div class="details_page">  <!-- detail page -->
+			<div class="deta_title">——&nbsp;&nbsp;详情页&nbsp;&nbsp;——</div>
+			<div class="deta_pics"></div>
+		</div>
+
+		<div class="return_top hide">
+			<a href="#details">TOP</a>
+		</div>
+
+		<!-- footer -->
+		<div id="footer" class="footer">
+			<div class="place-btn">
+				<input class="btn_cls place_btn" type="button" name="place-btn" value="下单">
+			</div>
+		</div>
+
+		<!-- product params -->
+		<div id="product_params" class="product_params hide">
+			<div class="params">
+				<p>商品参数</p>
+				<ul class="clearfix">   <!-- v-for -->
+					<!-- <li class="clearfix"><p>包装体积</p><b>20.5*24.5*35</b></li> -->
+				</ul>
+			</div>
+			<div class="paFooter">
+				<input type="button" name="paFooter-btn" value="完成">
+			</div>
+		</div>
+
+		<!-- place an order -->
+		<div id="place_order" class="place_order hide">
+			<div class="pHeader">
+				<div class="goodsPic">
+					<img src="./../images/ant_0.png" alt="good">
+				</div>
+				<div class="goodsInfo">
+					<h5></h5>
+					<p class="goodnum"></p>
+				</div>
+				<i class="icon iconfont">&#xe603;</i>
+			</div>
+			<div class="pPrice">
+				<div class="price_show">
+					<span>价格</span>
+					<ul>
+						<p>￥63.00-￥64.00</p>
+						<!-- <li>
+							<span>￥63.00</span>
+							<p>￥63.00</p>
+							<b>1件</b> 
+						</li> -->
+					</ul>
+				</div>
+
+				<div class="price_choose">
+					<ul>
+						<li class="clearfix">
+							<label>亮橘黄色/s</label>
+							<div class="num_input">
+								<i class="icon iconfont minus">&#xe61e;</i>
+								<input type="text" name="numSale" placeholder="0">
+								<i class="icon iconfont plus">&#xe643;</i>
+							</div>
+							<div class="price_count">
+								<span>￥63.00</span>
+								<span>x2</span>
+							</div>
+						</li>
+						<li class="clearfix">
+							<label class="label_active">亮橘黄色/s</label>
+							<div class="num_input">
+								<i class="icon iconfont minus">&#xe61e;</i>
+								<input type="text" name="numSale" placeholder="0">
+								<i class="icon iconfont plus">&#xe643;</i>
+							</div>
+							<div class="price_count">
+								<span>￥63.00</span>
+								<span>x2</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="pFooter">
+				<div class="choosed_num">
+					<p>已选<b class="disabled">0</b>件</p>
+				</div>
+				<div class="count_price">
+					<p>合计<b>（包邮）：</b><span class="disabled">￥0.00</span></p>
+				</div>
+				<div class="place_button">
+					<input class="bgdisabled" type="button" name="place_button" value="下单">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>	
+
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/swiper.min.js"></script>
+<script src="./../../lib/jweixin-1.2.0.js"></script>
+<script src="./../js/goods_detail_resale.js"></script>
+
+<script>
+	$(document).ready(function(){
+		var GoodsDetailPage = $.fn.GoodsDetailPage();
+		GoodsDetailPage.init({aaa: "wocaoni"});
+	});
+</script>

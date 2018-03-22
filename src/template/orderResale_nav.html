@@ -1,0 +1,142 @@
+<nav id="orderNav">
+	<div id="navitems" class="nav_list">
+		<a href="javascript:;" index="0">全部</a>
+		<a href="javascript:;" index="1">买家已付款,我未付款</a>
+		<a href="javascript:;" index="2">未发货</a>
+		<a href="javascript:;" index="3">已发货</a>
+		<a href="javascript:;" index="4">退货中</a>
+		<a href="javascript:;" index="5">换货中</a>
+		<a href="javascript:;" index="6">仅退款中</a>
+		<a href="javascript:;" index="7">交易成功</a>
+		<a href="javascript:;" index="8">交易关闭</a>
+		<a href="javascript:;" index="9">订单作废</a>
+	</div>
+	<p id="nav_listshowbtn"><i class="icon-menu-down"></i></p>
+	<dl id="nav_mtlist">
+		<dt id="navcellsTop"><span>选择订单状态</span><i id="nav_listhidebtn" class="icon-menu-up"></i></dt>
+		<dd id="navcells" class="nav_cell">
+			<a href="javascript:;" index="0">全部</a>
+			<a href="javascript:;" index="1" class="navResale_a">买家已付款<br/>我未付款</a>
+			<a href="javascript:;" index="2">未发货</a>
+			<a href="javascript:;" index="3">已发货</a>
+			<a href="javascript:;" index="4">退货中</a>
+			<a href="javascript:;" index="5">换货中</a>
+			<a href="javascript:;" index="6">仅退款中</a>
+			<a href="javascript:;" index="7">交易成功</a>
+			<a href="javascript:;" index="8">交易关闭</a>
+			<a href="javascript:;" index="9">订单作废</a>
+		</dd>
+	</dl>
+</nav>
+<script type="text/javascript">
+setNavstar();
+var state={
+	url:window.location.href.split("html/")[1]?window.location.href.split("html/")[1].split(".html")[0]:'',
+}
+switch(state.url){
+	case "orderNoSendResale":
+		document.getElementById('navitems').scrollLeft = "100";
+	break;
+	case "orderHadSendResale":
+		document.getElementById('navitems').scrollLeft = "420";
+	break;
+	case "orderReturnningResale":
+		document.getElementById('navitems').scrollLeft = "420";
+	break;
+	case "orderChangingResale":
+		document.getElementById('navitems').scrollLeft = "630";
+	break;
+	case "orderReturnPriceResale":
+		document.getElementById('navitems').scrollLeft = "850";
+	break;
+	case "orderSuccessResale":
+		document.getElementById('navitems').scrollLeft = "1500";
+	break;
+	case "orderCloseResale":
+		document.getElementById('navitems').scrollLeft = "1500";
+	break;
+	case "orderInvalidResale":
+		document.getElementById('navitems').scrollLeft = "1500";
+	break;
+}
+
+var showbtn = document.getElementById('nav_listshowbtn');
+var hidebtn = document.getElementById('nav_listhidebtn');
+
+showbtn.addEventListener('touchstart',function(event){
+	 event.preventDefault();
+	 var mtlist = document.getElementById('nav_mtlist');
+	 mtlist.style.display = "block";
+},false);
+
+hidebtn.addEventListener('touchstart',function(event){
+	 event.preventDefault();
+	 var mtlist = document.getElementById('nav_mtlist');
+	 mtlist.style.display = "none";
+},false);
+document.getElementById('navcellsTop').addEventListener('click',function(event){
+	 event.preventDefault();event.stopPropagation();
+	 var mtlist = document.getElementById('nav_mtlist');
+	 mtlist.style.display = "block";
+},false);
+document.getElementById('navcells').addEventListener('click',function(event){
+	 event.preventDefault();event.stopPropagation();
+	 var mtlist = document.getElementById('nav_mtlist');
+	 mtlist.style.display = "block";
+},false);
+document.getElementById('nav_mtlist').addEventListener('click',function(event){
+	 event.preventDefault();
+	 this.style.display = "none";
+},false);
+document.getElementById('nav_mtlist').addEventListener('touchmove',function(event){
+	 event.preventDefault();
+},false);
+function setNavstar(){
+	var navlist =  document.getElementById('navitems').getElementsByTagName('a');
+	var navcells =  document.getElementById('navcells').getElementsByTagName('a');
+	for (var i=0;i<navlist.length;i++) {
+		navlist[i].addEventListener('click',clickNavStart,false);
+	}
+	for (var i=0;i<navcells.length;i++) {
+		navcells[i].addEventListener('click',clickNavStart,false);
+	}
+}
+
+function clickNavStart(){
+	 event.preventDefault();
+     var _this = this;
+     var num = _this.getAttribute('index');
+ 	switch(num){
+ 		case "0":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderAllGoodsResale.html");
+ 			break;
+ 		case "1":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderNoPayResale.html");
+ 			break;
+ 		case "2":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderNoSendResale.html");
+ 			break;
+ 		case "3":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderHadSendResale.html");
+ 			break;
+ 		case "4":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderReturnningResale.html");
+ 			break;
+ 		case "5":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderChangingResale.html");
+ 			break;
+ 		case "6":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderReturnPriceResale.html");
+ 			break;
+ 		case "7":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderSuccessResale.html");
+ 			break;
+ 		case "8":
+ 			 window.location.replace("/yich/wapservice/dist/html/orderCloseResale.html");
+ 			break;
+ 		case "9":
+			 window.location.replace("/yich/wapservice/dist/html/orderInvalidResale.html");
+			break;
+ 	}
+}
+</script>

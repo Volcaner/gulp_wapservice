@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>交易数据</title>
+	<link rel="stylesheet" type="text/css" href="../css/transactionData.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div class="yingying" style="display:none;"></div>
+<div class="opendiv" style="display:none;">
+  <ul class="listselect">
+    <li type="week" class="qi"></li>
+    <li type="month" class="sanshi"></li>
+    <li type="threemonth" class="jiushi"></li>
+    <li type="all" class="all">所有</li>
+  </ul>
+  <div class="openclose">取消</div>
+</div>
+<div class="jysj">
+	 <div class="jysjleft"><i class="icon iconfont">&#xe664;</i><span>交易数据</span></div>
+	 <div class="jysjright"><span class="selectwb"></span><i class="icon iconfont">&#xe630;</i></div>
+</div>
+<ul class="listtype">
+	<li>
+		<i class="icon iconfont" style="color:#fec006;">&#xe611;</i>
+		<p class="pnum"><span class="ddje">0</span>元</p>
+		<span class="wenb">订单金额</span>
+	</li>
+	<li>
+		<i class="icon iconfont" style="color:#65c2f0;">&#xe71e;</i>
+		<p class="pnum"><span class="dds">0</span>笔</p>
+		<span class="wenb">订单数</span>
+	</li>
+	<li>
+		<i class="icon iconfont" style="color:#ff7474;">&#xe610;</i>
+		<p class="pnum"><span class="cgcs">0</span>次</p>
+		<span class="wenb">采购次数</span>
+	</li>
+	<li>
+		<i class="icon iconfont" style="color:#65c2f0;">&#xe68f;</i>
+		<p class="pnum"><span class="ddjj"></span>元</p>
+		<span class="wenb">订单均价</span>
+	</li>
+	<li>
+		<i class="icon iconfont" style="color:#ff7474;">&#xe61f;</i>
+		<p class="pnum"><span class="kdj">0</span>元</p>
+		<span class="wenb">客单价</span>
+	</li>
+	<li>
+		<i class="icon iconfont" style="color:#fec006;">&#xe841;</i>
+		<p class="pnum"><span class="ztkje">0</span>元</p>
+		<span class="wenb">总退款金额</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="ztks">0</span>笔</p>
+		<span class="wenb">总退款数</span>
+	</li>
+	<li>
+		<p class="pnum ztkl">0</p>
+		<span class="wenb">总退款率</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="jtkje">0</span>元</p>
+		<span class="wenb">仅退款金额</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="jtkbs">0</span>笔</p>
+		<span class="wenb">仅退款笔数</span>
+	</li>
+	<li>
+		<p class="pnum jtkl">0</p>
+		<span class="wenb">仅退款率</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="tkje">0</span>元</p>
+		<span class="wenb">退货金额</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="ths">0</span>笔</p>
+		<span class="wenb">退货数</span>
+	</li>
+	<li>
+		<p class="pnum thl">0</p>
+		<span class="wenb">退货率</span>
+	</li>
+	<li>
+		<p class="pnum"><span class="hhs">0</span>笔</p>
+		<span class="wenb">换货数</span>
+	</li>
+	<li>
+		<p class="pnum hhl">0</p>
+		<span class="wenb">换货率</span>
+	</li>
+	<li>
+		<p class="pnum jfl">0</p>
+		<span class="wenb">纠纷率</span>
+	</li>
+</ul>
+<div class="more"><i class="icon iconfont">&#xe600;</i></div>
+
+<div class="wlfx">
+	<div class="wlfxtop">
+		<i class="icon iconfont">&#xe6a2;</i>
+		<span>近30天物流分析</span>
+	</div>
+	<ul class="wllist">
+		<li>
+			<p class="ptop"><span class="fhbgs">0</span>个</p>
+			<span class="s_bottom">发货包裹数</span>
+		</li>
+		<li>
+			<p class="ptop"><span class="wlgss">0</span>个</p>
+			<span class="s_bottom">物流公司数</span>
+		</li>
+		<li>
+			<p class="ptop"><span class="sheng">0</span>省<span class="shi">0</span>市</p>
+			<span class="s_bottom">收货地址统计</span>
+		</li>
+		<li>
+			<p class="ptop"><span class="fhsc">0</span>时</p>
+			<span class="s_bottom">平均支付-发货时长</span>
+		</li>
+		<li>
+			<p class="ptop"><span class="qssc">0</span>时</p>
+			<span class="s_bottom">平均支付-签收时长</span>
+		</li>
+	    <li></li>
+	</ul>
+	<div class="tub">
+		<div class="tub_left tubmychart">
+			<canvas id="myChart" class="myChart" width="370" height="370"></canvas>
+		</div>
+		<div class="tub_right">
+			<ul class="rul_list kdlist"></ul>
+		</div>
+	</div>
+		<div class="tub">
+		<div class="tub_left tubmychart2">
+			<canvas id="myChart2" class="myChart" width="370" height="370"></canvas>
+		</div>
+		<div class="tub_right">
+			<ul class="rul_list dq"></ul>
+		</div>
+	</div>
+</div>
+<script src="../../lib/zepto.min.js"></script>
+<script src="../../lib/Chart.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/transactionData.js"></script>
+</body>
+</html>

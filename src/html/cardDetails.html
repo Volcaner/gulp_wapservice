@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>预存卡详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/cardDetails.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+    <script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+   <div class="yingying"></div>
+	<!--alert-->
+	<div class="divalert" style="display:none;">
+		<p class="tiptxt">对方有权拒绝您的申请，确定退款吗？</p>
+		<div class="btngroup">
+			<input type="button" value="退款" class="qd_sure"/>
+			<input type="button" value="取消" class="qx_canle"/>
+		</div>
+	</div>
+    <div class="card_main">
+	   <div class="topk_hong">
+		   <img src="../images/bg1.png" class="topk_bg"/>
+		   <div class="divkp">
+			   <div class="toppricekh toppricekh_hong">
+				   <div class="khong_left">
+					   <p class="khongprice"><span>0</span>折</p>
+					   <span class="spankh"></span>
+				   </div>
+				   <p class="prightjg">￥<span>0.00</span></p>
+			   </div>
+			   <span class="spanName"></span>
+			   <div class="bottom_txt">
+				   <span class="bot_tx"></span>
+				   <span class="bot_txt"></span>
+			   </div>
+		   </div>
+	   </div>
+
+	   <div class="topk_hui" style="display:none;">
+		<img src="../images/bg2.png" class="topk_bg"/>
+		<div class="divkp">
+				<img src="../images/bg3.png" class="wux_bg"/>
+			<div class="toppricekh toppricekh_hui">
+				<div class="khong_left">
+					<p class="khongprice"><span>0</span>折</p>
+					<span class="spankh"></span>
+				</div>
+				<p class="prightjg">￥<span>0.00</span></p>
+			</div>
+			<span class="spanName"></span>
+			<div class="bottom_txt">
+				<span class="bot_tx"></span>
+				<span class="bot_txt"></span>
+			</div>
+		</div>
+	</div>
+
+	   <!--listxx-->
+	   <ul class="listxx">
+		   <li>
+			   <span class="spanname">预存卡</span>
+			   <span class="spanzhi yckname"></span>
+		   </li>
+		   <li>
+				<span class="spanname">预存卡卡号</span>
+				<span class="spanzhi kahao"></span>
+			</li>
+			<li>
+				<span class="spanname">预存卡面额</span>
+				<span class="spanzhi miane"></span>
+			</li>
+			<li>
+				<span class="spanname">预存卡折扣</span>
+				<span class="spanzhi zhekou"></span>
+			</li>
+			<li>
+				<span class="spanname">累计使用金额</span>
+				<span class="spanzhi usermoney"></span>
+			</li>
+			<li>
+				<span class="spanname">未使用金额</span>
+				<span class="spanzhi wsymoney"></span>
+			</li>
+			<li>
+				<span class="spanname" style="color:#e20000;">退款金额</span>
+				<span class="spanzhi tkmoney" style="color:#e20000;"></span>
+			</li>
+			<li>
+				<span class="spanname">预存卡购买时间</span>
+				<span class="spanzhi buytime"></span>
+			</li>
+			<li>
+				<span class="spanname">来自仓储</span>
+				<span class="spanzhi cc"></span>
+			</li>
+	   </ul>
+	   <div class="sqtuik" style="display:none;">
+		   <input type="button" value="申请退款" class="btn_sqtk"/>
+	   </div>
+	   <p class="hongtk" style="display:none;"><span>申请退款中...</span></p>
+	</div>
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/cardDetails.js"></script>
+</html>

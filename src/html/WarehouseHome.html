@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>仓储首页</title>
+	<link rel="stylesheet" type="text/css" href="../css/WarehouseHome.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	 <link rel="stylesheet" type="text/css" href="../../lib/css/dropload.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div id="pageloading" style="position:fixed;left:0;top:0;width:100%;height:100%;background:#ffffff;z-index:10;">
+   <img src="../images/pageloading.gif" style="transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);position:absolute;left:50%;top:50%;"/>
+</div>
+<div class="yingying">
+<a href="javascript:;" class="yc_card">预存卡<img src="../images/bg7.png"/></a>
+</div>
+<div class="alertsuccess">
+    <i class="icon iconfont">&#xe621;</i>
+    <span></span>
+</div>
+<div class="searchinput">
+<div id="history">
+<p>历史记录</p>
+<ul class="ulhistory">
+</ul>
+</div>
+   <div class="searchcenter">
+      <div class="lefttype">
+         <div class="selectul"><span>标题</span><i class="icon iconfont">&#xe627;</i></div>
+         <ul class='listtype'>
+           <li>标题</li>
+           <li>货号</li>
+         </ul>
+      </div>
+      <div class="centersearch">
+       <!--  <i class="icon iconfont clear">&#xe66c;</i> -->
+        <i class="icon iconfont fdj">&#xe622;</i>
+        <input type="text" placeholder="搜索" class="ssinput"/>
+      </div>
+      <div class="rightqx">搜索</div>
+      <i class="icon iconfont iconmore">&#xe60f;</i>
+   </div>
+</div> 
+<ul class="tabul">
+   <li class="active">
+   	  <i class="icon iconfont">&#xe618;</i>
+   	  <span>新品排行</span>
+   </li>
+   <li>
+   	  <i class="icon iconfont">&#xe61d;</i>
+   	  <span>销量排行</span>
+   </li>
+</ul>
+<div class="main" id="content">
+	<ul>
+	</ul>
+</div>
+<script>
+var page=0;//页码
+var option="0";//新品 热销
+var type='0';//商品名 货号
+var key='';//搜索内容
+var search=((window.location.href).split("?"))[1];
+var supShopId='';
+if(search){
+	var searcharr=search.split("&");
+	for(var i=0;i<searcharr.length;i++){
+	  	var s=searcharr[i].split("=");
+	    if(s[0]=='supId'){
+	    	supShopId=s[1];
+	    	break;
+	    }
+	}
+}
+</script>
+<script src="../../lib/zepto.min.js"></script>
+<script src="../../lib/dropload.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/WarehouseHome.js"></script>
+<script src="../js/dropload_WarehouseHome.js"></script>
+</body>
+</html>

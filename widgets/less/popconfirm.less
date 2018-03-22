@@ -1,0 +1,122 @@
+/*-----------------------------------------------------------------*/
+@charset "utf-8";
+@designWidth:750;
+@backColor: #009688;
+@iconColor: #ff3f80;
+ody{
+	font-family: Helvetica;
+	background: #fff
+}
+.sectionmian{
+	background: #ffffff;
+	width: px2rem(750);
+	margin: auto;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{
+	-webkit-text-size-adjust: none
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	font-family: "arial" ,"HYQiHei-DES", "微软雅黑", "宋体", "Arial Narrow", HELVETICA;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+input,textarea,select,a,button{
+	outline:  none; 
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
+	border: none;
+}
+body,textarea,input,button,select,keygen,legend{
+	color: #333;
+	outline: 0;
+}
+
+/*---------------------------------popConfirm--------------------------------*/
+.popConfirm{
+	position: relative;
+	margin: 0 auto;
+	max-width: 750px;
+	display: block;
+	background: yellow;
+	height: 100%;
+
+	>input{
+		position: relative;
+		font-size: 30px;
+		left: 100px;
+		top: 100px;
+	}
+}
+.pop{
+	position: fixed; 
+	top: 0;
+	left: 50%;
+	width: 750px; 
+	height: 100%; 
+	background: rgba(0, 0, 0, 0.5); 
+	transform: translateX(-50%); 
+	-ms-transform: translateX(-50%); 	/* IE 9 */ 
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */ 
+	-o-transform: translateX(-50%); 	/* Opera */
+}
+.popBox{
+	position: relative; 
+	display: table;
+	max-width: 80%; 
+	background: #fff; 
+	border-radius: 20px 20px; 
+	margin: 0 auto; 
+	top: 50%; 
+	transform: translateY(-50%); 
+	-ms-transform: translateY(-50%); 	/* IE 9 */ 
+	-webkit-transform: translateY(-50%); /* Safari 和 Chrome */ 
+	-o-transform: translateY(-50%); 	/* Opera */
+}
+.tips{
+	position: relative; 
+	width: 100%; 
+	text-align: center; 
+	font-size: 30px;
+	border-bottom: 2px solid #eee;
+	border-radius: 20px 20px 0 0; 
+	padding: 30px 35px;
+}
+.btns{
+	position: relative;
+	width: 100%;
+
+	>input{
+		float: left;
+		width: 50%;
+		font-size: 30px;
+		background: #fff;
+		padding: 20px 30px;
+	}
+
+	>.confirmBtn{
+		border-radius: 0 0 20px 0;
+		color: #f44336;
+	}
+
+	>.cancelBtn{
+		border-right: 2px solid #eee;
+		border-radius: 0 0 0 20px;
+	}
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>转售订单</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css">
+	<link rel="stylesheet" type="text/css" href="../css/orders.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/dropload.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+@@include('./../template/orderResale_nav.html')
+<article class="ordermain">
+<div id="orderdroload">
+	<ul class="orderlist nopaylist">
+		<li traId="'+list[i].tra_id+'" payNum="'+list[i].alipay_num+'" traState="'+list[i].tra_state+'" retState="'+list[i].return_state+'">
+			<p class="or_title">
+				<span>大大b</span>
+				<span>买家已付款,我未付款</span>
+			</p>
+			<section class="or_goods">
+				<a href="/yich/wapservice/dist/html/goods_detail_page.html?proId='+mylist[j].shopInv.pro_id+'"><img src="'+_src+'"></a>
+				<p>
+					<a href="javascript:;">上高速公司如果上如果私人广告</a>
+					<span>白色/mm</span>
+					<span>
+						<span class="btn-display-pink">合作商价格</span>
+						<span class="btn-display-orange">一件代发</span>
+						<span class="btn-display-nomal">已改价</span>
+					</span>
+				</p>
+				<p>
+					<span>￥33.00</span>
+					<span>x1件</span>
+				</p>
+			</section>
+			<p class="or_price">
+				<span>商品金额:<i>￥43.00</i></span>
+				<span>运费:<i>￥5.00</i></span>
+				<span>合作商价格优惠:<i>￥10.00</i></span>
+			</p>
+			<p><span>实付金额:<i>￥38.00</i></span>
+				<span class="or_btnbox">
+					<input type="button" class="click-btn-redcolor singelpayBtn" value="付款" style="margin-right:0;">
+				</span>
+			</p>
+		</li>
+	</ul>
+</div>
+</article>
+@@include('./../template/orderResale_footer.html')
+</body>
+</html>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../lib/dropload.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/orderNoPayResale.js"></script>
+<script type="text/javascript" src="../js/orderPublicResale.js"></script> 

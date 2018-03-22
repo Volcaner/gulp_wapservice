@@ -1,0 +1,264 @@
+<!-- 
+author：石竹
+title:下单
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>下单</title>
+	<!-- <link rel="stylesheet"  href="../css/LArea.css"/> -->
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css"  href="../../lib/css/LArea.css"/>
+	<link rel="stylesheet" type="text/css"  href="../../lib/css/mt_tsp.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/goodsOrder.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<header id="order">
+	<table class="adresspost">
+		<tr>
+			<td class="addressIcon">
+				<i class="icon-adress-outline"></i>
+			</td>
+			<td class="addressTxt">
+				<div class="hadAddress">
+					<p>
+						<span class="addessName"></span>
+						<span class="telnumber"></span>
+					</p>
+					<p class="addressInfor addressXX">
+						
+					</p>
+				</div>
+				<input class="editorAddress" type="text" placeholder="编辑或粘贴收货人地址" disabled>
+			</td>
+			<td class="addressBtn">
+				<input type="button" class="click-btn-redcolor addressBase" value="地址库" >
+			</td>
+		</tr>
+	</table>
+	<p>
+		<i class="icon-message"></i>
+		<span><span>留言:</span><input class="o_liuy" type="text" value="" placeholder="给供货商的留言（选填）" maxlength="200"></span>
+	</p>
+	<p>
+		<i class="icon-wangwang"></i>
+		<span><span>旺旺ID:</span><input class="o_taobId" type="text" placeholder="淘宝买家旺旺ID（选填）" maxlength="20"></span>
+	</p>
+</header>
+<div class="main">
+<article>
+	<ul class="o_conBox">
+		<!-- <li>
+			<p class="od_title">
+				<span>优圣美帝厨房用具</span>
+			</p>
+			<section>
+				<div class="goodslist">
+					<a><img src="../images/tempImg.png"></a>
+					<dl class="o_content">
+						<dt >
+							<a>精华贴蔓延开慢条斯理热风;上高速人在拉恶搞</a>
+							<span><i class="icon-trash"></i></span>
+						</dt>
+						<dd class="csku">
+							<p>请选择sku</p>
+							<i class="icon-menu-right"></i>
+						</dd>
+						
+					</dl>
+				</div>
+				<div class="goodslist">
+					<a><img src="../images/tempImg.png"></a>
+					<dl class="o_content">
+						<dt >
+							<a>精华贴蔓延开慢条斯理热风;上高速人在拉恶搞</a>
+							<span class="skdelBtn"><i class="icon-trash"></i></span>
+						</dt>
+						<dd class="csku">
+							<p>请选择sku</p>
+							<i class="icon-menu-right"></i>
+						</dd>
+						
+					</dl>
+				</div>
+				
+				<div class="checkpost">
+					<p><input class="wlpost" type="text" id="cityname" value="" placeholder="请选择快递&nbsp;" disabled></p>
+					<i class="icon-menu-right"></i>
+				</div>
+			</section>
+		</li>  -->
+	</ul>
+</article>
+</div>
+<footer class="yicon-tabbar">
+	<div class="button-box7">
+		<p class="text-box0 rightX priceDispay">
+	       <span>应付金额</span>&nbsp;&nbsp;(含运费) :&nbsp;&nbsp;<span id="allPrice"><i>￥</i>0.<i>00</i></span>
+	    </p>
+	</div>
+	<div class="button-box3">
+		<input type="button" value="生成订单" class="button-btn0" id="orderbtn">
+	</div>
+</footer> 
+<section class="checkSkuMT">
+	<div class="mt_back"></div>
+	<div class="mt_conBox">
+		<dl class="mt_content">
+			<dt>
+				<p class="sku_img"><img src="../images/tempImg.png"></p>
+				<p class="sku_con">
+					<span>--</span>
+					<span class="js_tips"><i class="icon-question"></i>如何计算价格</span>
+				</p>
+				<p class="skuMTClose"><i class="icon-close"></i></p>
+			</dt>
+			<dd>
+				<p class="gsmess">价格 <span class="btn-display-pink">合作商价格</span><span class="btn-display-orange">一件代发</span></p>
+				<div class="gspDiv">
+					<ul class="gsprice">
+					 <li><span>￥0.00</span></li>
+						<!-- <li>
+							<span><i>￥</i>100.<i>00</i></span>
+							<del>￥110.00</del>
+							<span>≥10件:</span>
+						</li> -->
+					</ul>
+				</div>
+				<ul class="gssku">
+					<li>
+						<p class="chsku">xxx/xxx<i></i></p>
+						<p class="chnum">
+							<i class="icon-reduce jian"></i>
+							<input type="number" value="0" disabled>
+							<i class="icon-add jia"></i>
+						</p>
+						<p class="jsPrice"><span>￥0.00</span>&nbsp;×&nbsp;<span>0</span></p>
+					</li>
+				</ul>
+				<footer class="yicon-tabbar gsfoot doClickSta">
+					<div class="button-box7" style="padding:0;justify-content:space-around">
+						<p>已选<i class="checkNum">&nbsp;0&nbsp;</i>件</p>
+						<p>合计<span> (不含运费)&nbsp;:&nbsp;&nbsp;</span><span class="checkMoney" id="cellprice"><i>￥</i>0.<i>00</i></span></p>
+					</div>
+					<div class="button-box3">
+						<input type="button" class="button-btn0 checkBtn" value="确定">
+					</div>
+				</footer>
+			</dd>
+		</dl>
+	</div>
+</section>
+<!-- 计算价格提示-页面写死 -->
+<div id="js_mtTips">
+	<dl>
+		<dt></dt>
+		<dd>
+			<div class="js_con">
+				<ul>
+					<li><i class="icon-question"></i>如何加算价格？</li>
+					<li>
+						<p>SKU的单价根据该商品的采购数量之和来确定。<br/>例如：某采购商采购了一种商品的多个SKU，分别为红色6件，蓝色8件。<br/>这些SKU的价格分别如下：</p>
+					</li>
+					<li>
+						<p>红色：<span class="btn-display-pink">合作商价格</span></p>
+						<ul>
+							<li>
+								<span>￥63.00</span>
+								<del>￥68.00</del>
+								<span>1-1件:</span>
+							</li>
+							<li>
+								<span>￥60.00</span>
+								<del>￥65.00</del>
+								<span>2-10件:</span>
+							</li>
+							<li>
+								<span>￥57.00</span>
+								<del>￥62.00</del>
+								<span>11-20件:</span>
+							</li>
+							<li>
+								<span>￥52.00</span>
+								<del>￥57.00</del>
+								<span>≥21件:</span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>蓝色：<span class="btn-display-pink">合作商价格</span></p>
+						<ul>
+							<li>
+								<span>￥62.00</span>
+								<del>￥67.00</del>
+								<span>1-1件:</span>
+							</li>
+							<li>
+								<span>￥58.00</span>
+								<del>￥63.00</del>
+								<span>2-10件:</span>
+							</li>
+							<li>
+								<span>￥54.00</span>
+								<del>￥59.00</del>
+								<span>11-20件:</span>
+							</li>
+							<li>
+								<span>￥52.00</span>
+								<del>￥57.00</del>
+								<span>≥21件:</span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>计算总价的思路应为：</p>
+						<p>因为采购总数量为6+8=14，所以找到14件相对应的价格区间，分别为红色57.00元，蓝色54.00元，所以总价应为：57.00*6+54.00*8=774.00元。</p>
+					</li>
+				</ul>
+				<p id="js_mtcancel"><i class="icon-error-outline"></i></p>
+			</div>
+			
+		</dd>
+	</dl>
+</div>
+<!--地址解析-->
+<div class="analyBox">
+	<div class="analyCon">
+		<p class="an_title">地址解析<i class="icon-close an_cancelBtn"></i></p>
+		<div class="an_address">
+			<span class="an_jiexi an_analyText" contenteditable="plaintext-only" placeholder="粘贴收件人姓名、电话、地址(例:千牛)"></span>
+			<input type="button" value="解析" class="click-btn-redcolor analysisBtn">
+		</div>
+		<p class="an_addCon"><input class="an_name" type="text" placeholder="姓名" maxlength="10"></p>
+		<p class="an_addCon">
+			<input class="an_phone" type="text" placeholder="手机" maxlength="11">
+			<input class="an_tel" type="text" placeholder="座机" maxlength="26">
+		</p>
+		<div class="an_region" id="an_demo">
+			<input class="an_province" type="text" id="an_cityname" value="" disabled placeholder="省 市 区">
+		</div>
+		<div class="an_address">
+			<span class="an_jiexi an_street" contenteditable="plaintext-only" placeholder="具体街道地址"></span>
+		</div>
+		<div class="an_addressBtnbox">
+			<input class="addressSure" type="button" value="确定">
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../lib/city.js"></script>
+<script type="text/javascript" src="../../lib/LArea.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/goodsOrder.js"></script>
+<script type="text/javascript" src="../js/addressAnaly.js"></script>
+
+</html>

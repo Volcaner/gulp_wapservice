@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="hotcss" content="design-width=750">
+	<!--css-->
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../lib/font/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="./../css/paysuccess_resale.debug.css">
+	<title>支付成功</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="success">
+			<p><i class="icon iconfont">&#xe621;</i>支付成功</p>
+			<br>
+			<p>蚁巢交易号：<b>20171124008928478</b></p>
+		</div>
+
+		<div class="qrcode">
+			<div class="qrImg">
+				<div class="qrImgBox">
+					<img src="../images/qr.png" alt="">
+				</div>
+				<div class="followTips">
+					<p>如需跟踪订单状态</p>
+					<p>请长按二维码关注公众号</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="logo">
+			<p><img src="../images/pnlogo.png" alt="">蚁巢服务号</p>
+			<p>一站式供应链服务平台</p>
+		</div>
+
+	</div>
+</body>
+</html>	
+
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/jweixin-1.2.0.js"></script>
+<script src="./../js/paysuccess_resale.js"></script>
+
+<script>
+	$(document).ready(function(){
+		// e.preventDefault();
+		var tradeNum = _getMatch("tradeNum");
+		$(".success>p>b").html(tradeNum);
+	});
+
+	var _getMatch = function(name) {
+		var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		var r = window.location.search.substr(1).match(reg);
+		if(r!=null) {
+			return unescape(r[2]);
+		}else {
+			return null;
+		};
+	};
+</script>

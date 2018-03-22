@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>关注/收藏的仓储</title>
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../css/followedstorage.debug.css">
+</head>
+<body>
+	<div id="app" class="main">
+		<div class="followedStorage">
+			<div id="header" class="header clearfix">
+				<div class="followed">
+					<a class="hActive" href="javascript:;">关注的仓储</a>
+				</div>
+				<div class="collected">
+					<a href="javascript:;">收藏的仓储</a>
+				</div>
+			</div>
+
+			<div id="content" class="content hide">
+				<div class="followedCon">
+					<!-- followedCon -->
+					<ul>
+						<!-- <li class="clearfix">
+							<div class="headerIcon">
+								<img src="./../images/icon_0.jpg" alt="i">
+								<span></span>
+							</div>
+
+							<div class="storageInfo">
+								<div class="nameArea clearfix">
+									<p>竹尚家竹木制品</p>
+									<span>99月99日</span>
+								</div>
+
+								<div class="notice">
+									<p>[0条]【今日上下架通知】好管家双喜临门合金</p>
+								</div>
+							</div>
+						</li> -->
+					</ul>
+				</div>
+
+				<div class="collectedCon hide">
+					<!-- collectedCon -->
+					<ul>
+						<!-- <li class="clearfix">
+							<div class="headerIcon">
+								<img src="./../images/icon_0.jpg" alt="i">
+							</div>
+
+							<div class="storageInfo">
+								<div class="nameArea clearfix">
+									<p>竹尚家竹木制品</p>
+								</div>
+
+								<div class="level clearfix">
+									<img src="./../images/level_1.png" alt="1">
+									<img src="./../images/level_2.png" alt="2">
+									<img src="./../images/level_3.png" alt="3">
+								</div>
+
+								<div class="product">
+									<p>在线商品数：<span>322</span>件  |  本月上新数：<span>20</span>件</p>
+								</div>
+							</div>
+
+							<div class="cancelCollect">
+								<a class="tabbar-items">
+			                        <span class="tabbar-icon tabbar-active">
+			                            <i class="icon-cancelstar icon-font-nomal"></i>
+			                        </span>
+			                        <span class="tabbar-text">取消收藏</span>
+			                    </a>
+							</div>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="qrPop hide">
+			<div class="qrcode">
+				<div class="qrName">
+					<p>好管家厨房用品</p>
+					<span class="icon-close"></span>
+				</div>
+				<div class="qrCodePic">
+					<img src="./../images/qr_0.jpg" alt="q">
+				</div>
+				<div class="qrTip">
+					<p>长按识别二维码</p>
+					<p>前往关注的公众号</p>
+				</div>
+			</div>
+		</div> -->
+	</div>
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/mock-min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/config.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/followedstorage.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	document.body.onload = function() {
+		var FollowedStorage = $.fn.FollowedStorage();
+		FollowedStorage.init({});
+	};
+</script>

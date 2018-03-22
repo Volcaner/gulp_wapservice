@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>支付管理</title>
+	<link rel="stylesheet" type="text/css" href="../css/PaymentManagement.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/css/dropload.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div id="pageloading" style="position:fixed;left:0;top:0;width:100%;height:100%;background:#ffffff;z-index:10;">
+   <img src="../images/pageloading.gif" style="transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);position:absolute;left:50%;top:50%;"/>
+</div>
+<div id="yingying"></div>
+<div class="alertmodel">
+  <p class="alertmodel_p">确定关闭支付吗？</p>
+  <div class="alertmodel_btn">
+     <span class="alertmodel_cancal">取消</span>
+     <span class="alertmodel_sure">确定</span>
+  </div>
+</div>
+<ul class="topfied">
+	<li class="active">全部</li>
+	<li>已支付</li>
+	<li>未支付</li>
+</ul>
+<section class="mian" id="content">
+<ul class="listul"></ul>
+</section>
+<script src="../../lib/zepto.min.js"></script>
+<script src="../js/public.js"></script>
+<script>var option='ALL',page = 0;</script>
+<script src="../../lib/dropload.js"></script>
+<script src="../js/PaymentManagement.js"></script>
+<script src="../js/dropload_PaymentManagement.js"></script>
+
+</body>
+</html>

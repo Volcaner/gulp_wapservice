@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>upload picture</title>
+	<style type="text/css" media="screen">
+		
+	</style>
+	<link rel="stylesheet" type="text/css" href="./../css/uploadpic.debug.css">
+</head>
+<body>
+	<div id="uploadPicBox" class="uploadPicBox">
+		<input type="button" name="btn" value="submit" onclick="click2Submit()">
+	</div>
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8" async defer></script>
+<script src="./../js/uploadpic.js" type="text/javascript" charset="utf-8" async defer></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	var maxNum = 3;
+	var index = 0;
+	var files = [];
+
+	// 初始化 picbox
+	document.body.onload = function() {
+		$("#uploadPicBox").on("ready", function() {
+			addPicBox("uploadPicBox");
+		});
+	}
+
+	// 外部方法，控制 picbox 显示和数量
+	function addPicBox(parentId) {
+		// 随机ID
+		var uploadPicId = "uploadPic_" + Math.round(Math.random()*8999+1000);
+
+		// 添加 picbox 
+		$("#" + parentId).append('<div id="' + uploadPicId + '" class="uploadPic"></div>');
+
+		// picbox ready
+		$("#" + uploadPicId).on("ready", function() {
+			ready2UploadPic(uploadPicId, function(file) {
+				// 上传逻辑
+				files.push(file);
+
+				index++;
+				if(index < maxNum) {
+					addPicBox(parentId);
+				}
+			}, function(file) {
+				// 删除逻辑
+				files.forEach(function(item, num) {
+					if(item == file) {
+						files.splice(num, 1);
+						return;
+					}
+				});
+
+				if(index == maxNum) {
+					$("#" + uploadPicId).remove();
+					index>0 ? index-- : index=0;
+					addPicBox(parentId);
+				}
+				else {
+					$("#" + uploadPicId).remove();
+					index>0 ? index-- : index=0;
+				}
+			});
+		});
+	};
+
+	// 主要方法，调用上传图片的插件
+	function ready2UploadPic(parentId, afterGetFileCallback, afterClickDelCallback) {
+		var parentId = parentId;
+		var maxSize = 0.8;  // Mb
+		var uploadPicObj = new UploadPic();
+	    uploadPicObj.init(parentId, maxSize, function(file) {
+	    	// after click ok callback
+	    	afterGetFileCallback(file);
+	    }, function(file) {
+	    	// after click del callback
+	    	afterClickDelCallback(file);
+	    });
+	}
+	
+	// submit
+	function click2Submit() {
+		console.log(files);
+	}
+
+</script>

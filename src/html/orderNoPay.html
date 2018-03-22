@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>已下单商品</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css">
+	<link rel="stylesheet" type="text/css" href="../css/orders.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/dropload.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+@@include('./../template/order_nav.html')
+<article class="ordermain">
+<div id="orderdroload">
+	<ul class="orderlist nopaylist">
+		
+	</ul>
+</div>
+<div class="paymarnage" id="zfgl_btn">支付<br>管理</div>
+</article>
+<footer class="yicon-tabbar nopay_footer" id="noPayFoot">
+  	<div class="text-box0 tabbar-topcell">
+  		<p class="text-box7 betweenX nopay_footText">
+    	    <span class="checkall"><i class="icon-unchecked"></i>全选</span>
+    	    <span>已选择<span class="checkNum">0</span>个订单</span>
+    	</p>
+    	<p class="button-box3">
+    	   <input class="button-btn0" id="payMoneyBtn" type="button" value="付款">
+    	</p>
+	</div>	
+	<a class="tabbar-items " href="/yich/wapservice/dist/html/business_center.html">
+	    <span class="tabbar-icon">
+	        <i class="icon-usercenter-outline icon-font-nomal"></i>
+	    </span>
+	    <span class="tabbar-text">商户中心</span>
+	</a>
+	<a class="tabbar-items" href="/yich/wap/src/html/fwh_caigoudan.html">
+	    <span class="tabbar-icon">
+	        <i class="icon-purch-outline icon-font-nomal"></i>
+
+	    </span>
+	    <span class="tabbar-text">采购单</span>
+	</a>
+	<a class="tabbar-items tabbar-active" href="/yich/wapservice/dist/html/orderAllGoods.html">
+	    <span class="tabbar-icon">
+	        <i class="icon-order icon-font-nomal"></i>
+	    </span>
+	    <span class="tabbar-text">订单</span>
+	</a>
+	<a class="tabbar-items" href="/yich/wap/src/html/cailuku.html">
+	    <span class="tabbar-icon">
+	        <i class="icon-store-outline icon-font-nomal"></i>
+	    </span>
+	    <span class="tabbar-text">采录库</span>
+	</a>
+</footer> 
+</body>
+</html>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../../lib/dropload.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/orderNoPay.js"></script>
+<script type="text/javascript" src="../js/orderPublic.js"></script>

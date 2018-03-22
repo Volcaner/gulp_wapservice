@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="../css/login.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body style="background:#ffffff;">
+<div class="tips" style="display:none;"></div>
+<div id="t1">
+<div class="logintop">
+	<img src="../images/fwh_logo.png"/>
+</div>
+	<section class="main" id="m1" style="display:block;">
+		<div class="content contentmarbot">
+			<i class="icon iconfont">&#xe615;</i>
+			<input type="text" placeholder="手机号" class="num" id="num" maxlength="11">
+		</div>
+		<div class="content">
+			<i class="icon iconfont">&#xe6dd;</i>
+			<input type="number" placeholder="验证码" class="num" id="code">
+			<input type="button" value="获取验证码" class="yzm" id='yzm'>
+		</div>
+		<div class="content" style="margin-bottom:0;">
+			<i class="icon iconfont">&#xe613;</i>
+			<input type="password" placeholder="请输入6-18位密码" class="num" id="passed" maxlength="18">
+		</div>
+		<p class="ptishi" style="margin-bottom:0;">若该手机号已注册，此密码将替代原密码</p>
+		<p class="duanx_num" style="visibility:hidden;font-size:22px;color:#e20000;line-height:12px;margin:25px 0;height:12px;"></p>
+		<input type="button" value="登录并绑定" class="submit" id="sub">
+	</section>
+</div>
+
+<!-- <div id="t2" style="display:none;">
+	<div class="logintop2">
+		 <div class="yuan">
+		 	<img src="../images/fwh_my.png"/>
+		 </div>
+	</div>
+		<section class="main" id="m2">
+		<div class="content">
+			<i class="icon iconfont">&#xe63a;</i>
+			<input type="text" placeholder="用户名" class="num" id="yhmName">
+		</div>
+		<div class="content" style="margin-bottom:0;">
+			<i class="icon iconfont">&#xe613;</i>
+			<input type="password" placeholder="登陆密码" class="num" id="passed">
+		</div>
+		<input type="button" value="登录" class="next" id="next">
+	</section>
+</div> -->
+<script src="../../lib/zepto.min.js"></script>
+<script src="../../lib/Barrett.js"></script>
+<script src="../../lib/BigInt.js"></script>
+<script src="../../lib/RSA.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>

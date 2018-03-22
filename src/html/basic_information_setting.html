@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>基础信息设置</title>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/base.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/yich_UI.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/mt_tsp.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../lib/css/LArea.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/popchoose.debug.css">
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/basic_information_setting.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="./../../dist/css/updateheadericon.debug.css">
+	<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="header">
+		<a class="head">
+			<span class="touxiang">头像</span>
+			<img class="headPortrait" src='./../../dist/images/headPortrait.png'>
+			<i class="icon-menu-right menu-more"></i>
+		</a>
+	</div>
+	<div class="content">
+		<div class="passwordInput">
+			<span class="paper">用户名</span><span class="name">小b</span>
+		</div>
+		<div class="passwordInput">
+			<span class="paper">昵称</span><input class="nameInput" type="text" placeholder="请填写姓名" maxlength="10">
+		</div>
+		<a class="informationSetting sexChoose">性别<i class="icon-menu-right more"></i><span class="wordFloatRight sex"></span></a>
+		<a class="informationSetting birthday">生日<i class="icon-menu-right more"></i><span class="wordFloatRight dates"></span></a>
+		<div class="passwordInput">
+			<span class="paper">QQ</span><input class="QQInput" type="text" placeholder="请填写QQ号码">
+		</div>
+		<a class="informationSetting" id="address">住址<i class="icon-menu-right more"></i><input type="text" disabled="true" id="cityname" class="wordFloatRight addressInput"></a>
+		<div class="streetModule">
+			<span class="streetPaper">街道</span><textarea class="streetInput" type="text" placeholder="请填写具体街道地址"></textarea>
+		</div>
+	</div>
+	<input type="file" name="files" accept="image/*" class="headPotraitChoose">
+	<footer class="footer">
+		<button class="save">保存</button>
+	</footer>
+	<!-- <button class="save">保存</button> -->
+	<!-- <footer class="yicon-tabbar">
+		<div class="button-box0">
+        	<input type="button" id="addAdressBtn" class="button-btn0 button-active" value="保存" >
+    	</div>
+	</footer> -->
+	<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../lib/aliyun-oss-sdk.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../lib/datePicker.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../lib/city.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../lib/LArea.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../dist/js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../dist/js/popchoose.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./../../dist/js/basic_information_setting.js" charset="utf-8"></script>
+	<script src="./../../dist/js/updateheadericon.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

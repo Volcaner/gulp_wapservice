@@ -1,0 +1,119 @@
+/*-----------------------------------------------------------------*/
+@charset "utf-8";
+@designWidth:750;
+@backColor: #009688;
+@iconColor: #ff3f80;
+ody{
+	font-family: Helvetica;
+	background: #fff
+}
+.sectionmian{
+	background: #ffffff;
+	width: px2rem(750);
+	margin: auto;
+}
+html{
+	width: 100%;
+	height: 100%;
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{
+	-webkit-text-size-adjust: none
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	word-wrap: break-word;
+	font-family: "arial" ,"HYQiHei-DES", "微软雅黑", "宋体", "Arial Narrow", HELVETICA;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+input,textarea,select,a,button{
+	outline:  none; 
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	tap-highlight-color: rgba(0,0,0,0);
+	border: none;
+}
+body,textarea,input,button,select,keygen,legend{
+	color: #333;
+	outline: 0;
+}
+
+/*---------------------------------uploadPic--------------------------------*/
+.uploadPicBox{
+	position: relative;
+	margin: 0 auto;
+	max-width: 750px;
+	display: block;
+	background: yellow;
+	height: 100%;
+}
+.uploadPic{
+	position: relative;
+	left: 100px;
+	top: 100px;
+	width: 100px;
+	height: 100px;
+	// overflow: hidden;
+	background: yellow;
+}
+.picBox{
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 100%; 
+	height: 100%; 
+	background: rgba(0, 0, 0, 0.5); 
+	overflow: hidden;
+
+	>input{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		opacity: 0;
+	}
+}
+.uploadImgW{
+	position: absolute;
+	height: 100%;
+	left: 50%;
+	transform: translateX(-50%); 
+	-ms-transform: translateX(-50%); 	/* IE 9 */ 
+	-webkit-transform: translateX(-50%); /* Safari 和 Chrome */ 
+	-o-transform: translateX(-50%); 	/* Opera */
+
+}
+.uploadImgH{
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	transform: translateY(-50%); 
+	-ms-transform: translateY(-50%); 	/* IE 9 */ 
+	-webkit-transform: translateY(-50%); /* Safari 和 Chrome */ 
+	-o-transform: translateY(-50%); 	/* Opera */
+}
+.delPic{
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 50% 50%;
+	background: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	text-align: center;
+	line-height: 60px;
+	font-size: 24px;
+	vertical-align: middle;
+}

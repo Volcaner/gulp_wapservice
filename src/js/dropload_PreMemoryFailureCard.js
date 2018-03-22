@@ -1,0 +1,91 @@
+var dropload_obj = null;
+$(function(){
+    // 页数
+  //  var page = 0;
+    // dropload
+    dropload_obj=$('#content').dropload({
+        bIsAutoLoad: true,
+        scrollArea : window,
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropdownload-refresh"><span class="icon iconfont iconspan iconfontsize">&#xe693;</span><span class="lable">下拉刷新</span></div>',
+            domUpdate  : '<div class="dropload-update"><span class="icon iconfont iconspan iconfontsize">&#xe693;</span><span class="lable">释放更新</span></div>',
+            domLoad    : '<div class="dropdownload-load"><span class="loadingspan"><span class="loading"></span></span><span class="lable">加载中</span></div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropupload-refresh">上拉加载更多</div>',
+            domLoad    : '<div class="dropupload-load">加载中</div>',
+            domNoData  : '<div class="dropload-noData">卡片已经展示完了</div>'
+        },
+        loadUpFn : function(me){
+            $.ajax({
+                type:"POST",
+                url:"/yich/BusinessPrestorecardExhibitionServlet",
+                dataType:"json",
+                data:{
+                	 "state":'invalid',
+                     "sort":sort,
+                     "page":1,
+                },
+                success: function(json){
+                	if(typeof (json.userId)!='undefined'){
+                	    func.fwh_authorize(json.userId);
+                	}
+                    strdom(json,true);
+                    // 重置页数，重新获取loadDownFn的数据
+                    page = 1;
+                    // 解锁loadDownFn里锁定的情况
+                    me.noData(false);
+                    // 每次数据加载完，必须重置
+                    me.resetload();
+                    me.unlock();
+                },
+                error: function(){
+                    console.log('Ajax error!');
+                }
+            });	
+        },
+        loadDownFn : function(me){
+            page++;
+            // 拼接HTML
+            $.ajax({
+                type:"POST",
+                url:"/yich/BusinessPrestorecardExhibitionServlet",
+                dataType:"json",
+                data:{
+                	"state":'invalid',
+                    "sort":sort,
+                    "page":page,
+               },
+                success: function(json){
+                	if(typeof (json.userId)!='undefined'){
+                	    func.fwh_authorize(json.userId);
+                	}
+                    var arrLen = json.prestoreCardSoldList.length;
+                    if(arrLen > 0){
+                        strdom(json);
+                    // 如果没有数据
+                    }else{
+                    	if($(".list").children("li").length==0){
+                    		$(".listcard").css("display","none");
+                    		$(".nodata2").css("display","block");
+                    	}else{
+                    		$(".listcard").css("display","block");
+                    		$(".nodata2").css("display","none");
+                    	}
+                        // 锁定    
+                        me.lock();
+                        // 无数据
+                        me.noData();
+                    }
+                    me.resetload();
+                   
+                },
+                error: function(){
+                    console.log('Ajax error!');
+                }
+            });
+        }
+    });
+});

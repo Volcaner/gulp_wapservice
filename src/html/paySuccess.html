@@ -1,0 +1,56 @@
+<!-- 
+author：石竹
+title:核对订单
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>收银台</title>
+	<!-- <link rel="stylesheet"  href="../css/LArea.css"/> -->
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../css/checkoutCounter.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body id="paysuc">
+<div class="main">
+	<article class="sucBox">
+		<p class="sucSta"><i class="icon-checked"></i></p>
+		<p class="sucMoney">￥0.00</p>
+		<p class="sucText">支付成功</p>
+		<p class="sucNum">蚁巢交易号&nbsp;:&nbsp;<span></span></p>
+	</article>
+	<div class="button-box0 sucBtnBox">
+        <input type="button" value="返回首页" id="goIndexBtn"  class="button-sure button-active">
+        <input type="button" value="查看订单" id="goOrderBtn"  class="button-sure">
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript">
+var state={
+		payNum:window.location.href.split('payNum=')[1]?window.location.href.split('payNum=')[1].split('&')[0]:'',
+		payMoney:window.location.href.split('payMoney=')[1]?window.location.href.split('payMoney=')[1].split('&')[0]:'',
+}
+$(function(){
+$('.sucMoney').html("￥"+Number(state.payMoney).toFixed(2));
+$('.sucNum>span').html(state.payNum);
+
+$('#goIndexBtn').click(function(){
+	window.location.href="/yich/wapservice/dist/html/business_center.html";
+})
+$('#goOrderBtn').click(function(){
+	window.location.href="/yich/wapservice/dist/html/orderAllGoods.html";
+})
+	
+	
+})
+</script>
+
+</html>

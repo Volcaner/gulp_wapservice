@@ -1,0 +1,97 @@
+<!-- 
+author：石竹
+title:申请售后
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>申请售后</title>
+	<!-- <link rel="stylesheet"  href="../css/LArea.css"/> -->
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../css/popchoose.debug.css">
+	<link rel="stylesheet" type="text/css" href="../css/returnPriceApply.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<article class="main">
+	<ul class="rp_conBox">
+		<li class="goodsList">
+			<section>
+				<div class="goodsContent">
+					<a href="javascript:;"><img class="header"></a>
+					<p>
+						<a href="javascript:;"><span class="title"></span></a>
+						<span class="sku"></span>
+					</p>
+					<p>
+						<span class="price"></span>
+						<span class="count"></span>
+					</p>
+				</div>
+			</section>
+		</li>
+		<li>服务类型<p>仅退款</p></li>
+		<li>申请原因<p class="reason" onclick="click2ShowPop()">请选择<i class="icon-menu-right"></i></p></li>
+		<li>退款金额<p>￥<input type="number" placeholder="请填写" class="refund"></p></li>
+		<li>最多￥<span class="payment"></span>，&nbsp;&nbsp;含运费￥<span class="logmoney"></span></li>
+		<li>
+			<span>申请说明</span>
+			<div class="applymes" contenteditable="plaintext-only" placeholder="选填"></div>
+			<span class="applymesNum">0/200</span>
+		</li>
+		<li>已阅读并同意<p class="ruleBtn">《蚁巢仅退款、退货、换货规则》</p></li>
+	</ul>
+</article>
+<footer class="yicon-tabbar">
+	<div class="button-box0">
+		<input type="button" value="提交" class="button-btn0 submit" disabled="disabled">
+	</div>
+</footer>
+@@include('./../template/afertSalesRule.html') 
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../js/popchoose.js"></script>
+<script type="text/javascript" src="./../js/returnPriceApply.js"></script>
+<!-- <script type="text/javascript" src="../js/LArea.js"></script> -->
+<script type="text/javascript">
+	function click2ShowPop() {
+        var popChooseObj = new PopChoose();
+        var items = [
+        	"未按约定时间发货",
+        	"协商一致退款",
+        	"缺货",
+        	"拍错/多拍/不想要",
+        	"其他原因",
+        ];
+        popChooseObj.init(items, function(item) {
+        	$('.rp_conBox>li').eq(2).find('p').html(item+'<i class="icon-menu-right"></i>');
+        	$('#popChoose').remove();
+        	if($('.refund').val()){
+        		$('.submit').removeAttr('disabled');
+    			$('.submit').addClass('red');
+        	}
+        });
+	};
+	$('.ruleBtn').click(function(){
+		$('.as_ruleBox').show();
+	})
+	//申请说明计数
+	var oldval = '';
+	$('.applymes').on("input",function(){
+		if($(this).text().length>200){
+			$(this).text(oldval);
+		}else{
+			oldval = $(this).text();
+			$('.applymesNum').text($(this).text().length);
+		}	
+	})
+	
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no,minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-title" content="应用标题">
+	<meta content="telephone=no" name="format-detection" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="screen-orientation" content="portrait">
+	<meta name="full-screen" content="yes">
+	<meta name="browsermode" content="application">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="x5-page-mode" content="app">
+	<meta name="hotcss" content="design-width=750">
+	<title>申请售后</title>
+	<link rel="stylesheet" href="./../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="./../css/customerservice.debug.css">
+</head>
+<body>
+	<div id="app" class="main">
+		<div class="hide enter_area">
+			<ul>
+				<li class="clearfix">
+					<span>
+						<img src="./../images/icon_0.png" alt="0">
+					</span>
+
+					<div>
+						<p>退货</p>
+						<span>已收到货，需要退还已收到的货物并退款</span>
+					</div>
+
+					<i class="icon-menu-right"></i>
+				</li>
+				<li class="clearfix">
+					<span>
+						<img src="./../images/icon_1.png" alt="1">
+					</span>
+
+					<div>
+						<p>换货</p>
+						<span>已收到货，需要与供货商交换货品</span>
+					</div>
+
+					<i class="icon-menu-right"></i>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
+<script src="./../../lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/hotcss.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/mock-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../../lib/config.js" type="text/javascript" charset="utf-8"></script>
+<script src="./../js/customerservice.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+	document.body.onload = function() {
+		var CustomerService = $.fn.CustomerService();
+		CustomerService.init({});
+	};
+</script>

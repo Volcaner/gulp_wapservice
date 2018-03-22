@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>下单</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/mt_tsp.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/LArea.css">
+	<link rel="stylesheet" type="text/css" href="../css/address.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<article>
+	<ul class="cad_content">
+		<li>
+			<p>
+				<span class="cad_title">收货人</span>
+				<input type="text" maxlength="10" placeholder="请填写收货人">
+			</p>
+		</li>
+		<li>
+			<p>
+				<span class="cad_title">联系手机</span>
+				<input class="contactPhone" type="number" placeholder="与座机至少填写一项">
+			</p>
+		</li>
+		<li>
+			<p>
+				<span class="cad_title">联系座机</span>
+				<input class="landline" type="text" placeholder="区号-电话-分机，与手机至少填写一项" maxlength="30">
+			</p>
+		</li>
+		<li>
+			<p>
+				<span class="cad_title">邮政编码</span>
+				<input class="postcode" type="number" placeholder="选填">
+			</p>
+		</li>
+		<li id="demo1">
+			<p>
+				<span class="cad_title">所在地区</span>
+				<input type="text" id="cityname" value="请选择" disabled>
+				<i class="icon-menu-right"></i>
+			</p>
+		</li>
+		<li class="xx_adress">
+			<textarea placeholder="请填写街道地址" maxlength="50"></textarea>
+		</li>
+		<li class="payResaleMoney">
+			<p class="payIconBox"><i class="icon-wechatpay"></i>微信支付</p>
+			<p class="payMoneyBox">需支付：<span><i>￥</i>0<i>.00</i></span></p>
+		</li>
+		
+	</ul>
+</article>
+<footer class="yicon-tabbar">
+	<div class="button-box0">
+        <input type="button" id="payResaleBtn" class="button-btn0 button-active" value="确定,前往支付">
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="../../lib/city.js"></script>
+<script type="text/javascript" src="../../lib/LArea.js"></script>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script type="text/javascript" src="../js/orderPayResale.js"></script> 
+</html>

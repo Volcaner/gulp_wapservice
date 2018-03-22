@@ -1,0 +1,110 @@
+@charset "utf-8";
+.container {
+  position: relative;
+  /*rem----*/
+  margin: auto;
+  margin-bottom: 1.92rem;
+  /*rem-----   px2rem*/
+}
+.dropload-up,
+.dropload-down {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  font-size: 0.512rem;
+  /* 开启硬件加速 */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  vertical-align: middle;
+}
+.dropload-down {
+  position: absolute;
+  height: 1.92rem;
+  opacity: 0;
+  bottom: - 1.92rem;
+  width: 100%;
+}
+.dropdownload-refresh .iconspan,
+.dropload-update .iconspan {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  padding-right: 0.42666667rem;
+}
+.dropdownload-refresh .iconfontsize,
+.dropload-update .iconfontsize {
+  font-size: 1.06666667rem;
+  vertical-align: middle;
+}
+.dropdownload-refresh .lable,
+.dropload-update .lable,
+.dropdownload-load .lable {
+  vertical-align: middle;
+  display: inline-block;
+  width: 50%;
+  text-align: left;
+  padding-left: 0.42666667rem;
+}
+.dropdownload-refresh,
+.dropload-update,
+.dropdownload-load {
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #FFFFFF;
+}
+.dropupload-refresh,
+.dropupload-load,
+.dropload-noData {
+  height: 1.92rem;
+  line-height: 1.92rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #a8a8a8;
+}
+.dropload-up {
+  background-image: url(/yich/wap/src/images/topload.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -moz-background-size: 100%;
+}
+.dropdownload-load .loadingspan {
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+  padding-right: 0.42666667rem;
+}
+.dropdownload-load .loadingspan .loading {
+  display: inline-block;
+  height: 1.00266667rem;
+  width: 1.00266667rem;
+  border-radius: 100%;
+  border: 0.064rem solid #FFFFFF;
+  border-bottom-color: transparent;
+  vertical-align: middle;
+  -webkit-animation: rotate 0.75s linear infinite;
+  animation: rotate 0.75s linear infinite;
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

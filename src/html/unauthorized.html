@@ -1,0 +1,41 @@
+<!-- 没有权限页面 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>无权限</title>
+	<link rel="stylesheet" type="text/css" href="../css/base.debug.css">
+	<link rel="stylesheet" type="text/css" href="../../lib/css/yich_UI.css">
+	<link rel="stylesheet" type="text/css" href="../css/unauthorized.debug.css">
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body>
+<div class="unauthorityContent">
+	<div class="unauthorityIcon">
+		<i class="icon-noauthority-outline icon"></i>
+	</div>
+	<p class="detailsTips">对不起，你没有查看此商品的权限</p>
+	<p class="detailsTips connectTips">请联系供货商开通权限</p>
+	<div class="content">
+		<a class="click-btn-redcolor" href="/yich/wapservice/dist/html/WarehouseHome.html">前往仓储首页</a>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../../lib/zepto.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	var supId = _getReg(supId)?_getReg(supId):'';
+	$('.click-btn-redcolor').attr('href','/yich/wapservice/dist/html/WarehouseHome.html?supId='+supId);
+})
+function _getReg(name) {
+	var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r!=null) return  unescape(r[2]); return null;
+}
+</script>
+</html>

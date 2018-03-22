@@ -1,0 +1,279 @@
+@charset "utf-8";
+
+.main{
+	width: 750px;
+	margin: auto;
+}
+#orderCheck{
+	font-size: 24px;
+	color: #212121;
+	padding: 0 30px;
+	background: #fff;
+	>.adresspost{
+		padding: 30px 0;
+		border-bottom: 2px solid #eee;
+		dt{
+			overflow: hidden;
+			i{
+				position: relative;
+				top: 3px;
+				font-size: 34px;
+				color: #999;
+				margin-right: 20px;
+			}
+			span{
+				font-size: 28px;
+
+			}
+			span:last-child{
+				float: right;
+				height: 100%;
+				margin-top: 5px
+				
+			}
+		}
+		dd{
+			padding-left: 55px; 
+			margin-top: 12px;
+		}
+	}
+	
+}
+.oc_wangwang,.oc_message{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		font-size: 24px;
+		color: #999;
+		height: 90px;
+		 dt{
+		 	flex: 1;
+		 	display: flex;
+		 	align-items: center;
+		 	i{
+		 		flex: 0 1 auto;
+		 		font-size: 32px;
+		 		margin-right: 20px;
+		 	}
+		 	>span{
+		 		flex: 1;
+		 		input{
+			 		width: 80%;
+			 		font-size: 24px;
+			 	}
+		 	}
+		 	
+
+		 }
+		 dd{
+			flex: 0 1 auto;
+			margin-left: 30px;
+		 }
+	}
+.o_conBox{
+	padding-bottom:120px;
+	margin-top: 20px;
+	li{
+		margin-top: 20px;
+		padding: 0px 30px;
+		background: #fff;
+		.od_title{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-bottom: 2px solid #eeeeee;
+			height: 88px;
+			font-size: 28px;
+			>span{
+				display: flex;
+				align-items: center;
+				height: 100%;
+			}
+		}
+		>section{
+			
+			>.goodsContent{
+				padding: 30px 0;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				overflow: hidden;
+				font-size: 24px;
+				color: #212121;
+				border-bottom: 2px solid #eee;
+				>a:nth-child(1){
+					position:relative;
+					width: 150px;
+					height: 150px;
+					img{
+						width:150px;
+						height:150px; 
+					}
+				}
+				>p:nth-child(2){
+					width: 370px;
+					min-height: 176px;
+					margin-left: 22px;
+					>a:nth-child(1){
+						display: block;
+						color: #212121;
+						text-decoration: none;
+					}
+					span:nth-child(2){
+						display: block;
+						color: #999999;
+
+					}
+					span:last-child{
+						margin-top: 22px;
+					}
+				}
+				>p:nth-child(3){
+					position: relative;
+					width: 140px;
+					line-height: 32px;
+					height: 176px;
+					span{
+						display: block;
+						text-align: right;
+					}
+					del{
+						display: block;
+						text-align: right;
+						color: #999999;
+					}
+					.shsm{
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						color: #f44336;
+					}
+					
+				}
+				.goodsContent:last-child{
+					border:0;
+				}
+			}
+			>.goodsSHbtn{
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+				margin-top: 20px;
+			}
+		}
+		.checkpost{
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			font-size: 24px;
+			color: #212121;
+			height: 90px;
+			border-bottom: 2px solid #eee;
+			p{
+				flex: 1;
+				display: flex;
+				align-items: center;
+				color: #999;
+				>i{
+					flex: 0 1 auto;
+					font-size: 30px;
+					color: #999;
+					margin-right: 20px;
+				}
+				span{
+					flex: 1;
+					>input{
+						width: 80%;
+						font-size: 24px;
+						border: 0;
+						background:#fff;
+					}
+					>input:disabled{
+						 -webkit-text-fill-color: #999;
+					    -webkit-opacity: 1;
+					}
+				}
+				
+			}
+			i{
+				flex: 0 1 auto;
+				color: #999;
+			}
+		}
+		.oc_message{
+			border-bottom: 2px solid #eee;
+			
+				
+			input{
+				width: 85%;
+			}
+				
+			
+		}
+		.or_price{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 80px;
+			color: #999;
+			font-size: 24px;
+			border-bottom: 2px solid #eee;
+			i{
+				font-style: normal;
+			}
+		}
+		.oc_mixprice{
+			font-size: 24px;
+			color: #212121;
+			text-align: right;
+			padding: 30px 0;
+			span{
+				color: #f44336;
+				margin-left: 20px;
+			}
+		}
+	}
+	
+}
+.priceDispay{
+	font-size: 24px;
+	color: #999;
+	padding-right: 30px;
+	span:first-child{
+		font-size:28px;
+		color: #212121;
+	}
+	span:last-child{
+		font-size: 32px;
+		font-weight: bold;
+		i{
+			font-size: 24px;
+			font-style: normal;
+		}
+	}
+}
+/*底部高亮按钮*/
+.doClickSta{
+	.checkMoney{
+		color: #f44336 !important;
+	}
+	.checkBtn{
+		color: #fff;
+		background: #f44336;
+	}
+}
+
+
+/*暂无售后*/
+.noafterSalse{
+	position:absolute;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:40px;
+	color:#fff;
+	font-size:20px;
+	text-align:center;
+	line-height:40px;
+	background:#fe8e00;
+}

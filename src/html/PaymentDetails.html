@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="hotcss" content="design-width=750">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>支付详情</title>
+	<link rel="stylesheet" type="text/css" href="../css/PaymentDetails.debug.css"/>
+	<link rel="stylesheet" type="text/css" href="../../lib/font/iconfont.css"/>
+	<script type="text/javascript" src="../../lib/hotcss.js"></script>
+</head>
+<body style="display:none;">
+<!--无数据-->
+<div class="nodata" style="display:none;">
+<img src="../images/bg5.png"/>
+<p>暂无数据</p>
+</div>
+<div id="yingying"></div>
+<div class="alertmodel">
+  <p class="alertmodel_p">确定关闭支付吗？</p>
+  <div class="alertmodel_btn">
+     <span class="alertmodel_cancal">取消</span>
+     <span class="alertmodel_sure">确定</span>
+  </div>
+</div>
+<div class="topdjs">剩余支付时间：<span class="minutes">00</span>分<span class="secods">00</span>秒<b style="display:none;" class="hiddenval"></b></div>
+
+<ul class="listlb">
+</ul>
+<div class="bottomzfbtn">
+  <span class="gbzf">关闭支付</span>
+  <span class="zf">支付</span>
+</div>
+<script src="../../lib/zepto.min.js"></script>
+<script src="../js/public.js"></script>
+<script src="../js/PaymentDetails.js"></script>
+</body>
+</html>
